@@ -26,3 +26,72 @@ SELECT NOME, CIDADE, ESTADO FROM cliente;
 INSERT INTO cliente VALUES ('820','MECANICA SAO PAULO', 'R. DO MACUCO, 99','SANTO ANTONIO','ES','29810-020');
 INSERT INTO cliente VALUES ('170','POSTO BRASIL LTDA', 'AV. IMPERIO, 85','GUAGIRUS','BA','42837-000');
 INSERT INTO cliente VALUES ('340','TRANSP. CARGA PESADA LTDA', 'AV. DOS AUTONOMISTAS, 1000','OSASCO','SP','06020-010');
+
+INSERT INTO cliente VALUES ('100','MICROS INFORMATICA S/A', 'R. DAS PALMEIRAS, 4 - LOJA 2','SAO PAULO','SP','01226-010');
+INSERT INTO cliente VALUES ('750','IMOBILIARIA PAVAO', 'AV. BRASIL, 105','RIO DO PRADO','MG','39940-111');
+INSERT INTO cliente VALUES ('860','ASSIS CONTABIL S/C LTDA', 'R. DO MONUMENTO, 550','SANTO AMARO','BA','44200-090');
+INSERT INTO cliente VALUES ('230','SUPERMERCADO BOTAFOGO', 'R. DA LAGOA, 999','RIO DAS OSTRAS','RJ','28890-540');
+INSERT INTO cliente VALUES ('150','MARCONDES E IRMAO LTDA', 'R. DO ORATORIO, 66','ROSARIO OESTE','MT','78470-010');
+INSERT INTO cliente VALUES ('800','DOCEIRA PAO DE ACUCAR', 'R. MARTINS PENA, 200','SANTO ANDRE','SP','09190-700');
+INSERT INTO cliente VALUES ('990','METALURGICA FOGO E FERRO', 'R. ARTUR BERNANDES, 3500','SANTO ANDRE','SP','09193-410');
+INSERT INTO cliente VALUES ('500','JOSE DANTAS E FILHOS S/C LTDA', 'AV. IPIRANGA, 1000','LUCRECIA','RN','59805-010');
+INSERT INTO cliente VALUES ('300','PCTEC - MICROCOMPUTADORES S/A', 'R. CAIS DO PORTO, ARMAZEM 3','SANTOS','SP','11000-005');
+
+
+SELECT * FROM venda
+SELECT * FROM cliente
+
+SELECT venda.DUPLIC, cliente.NOME from cliente, venda
+where cliente.CODCLI = venda.CODCLI;
+
+SELECT  cliente.NOME, venda.DUPLIC, venda.VALOR from cliente, venda
+where cliente.CODCLI = venda.CODCLI ORDER BY cliente.NOME
+
+select * from cadfun;
+
+select AVG(FILHOS) FROM cadfun;
+
+select AVG(FILHOS) FROM cadfun
+WHERE DEPTO='5';
+
+SELECT COUNT(salario) FROM cadfun
+WHERE DEPTO='5';
+
+SELECT nome, salario, depto FROM cadfun
+WHERE DEPTO='5';
+
+SELECT sum(salario) FROM cadfun
+WHERE funcao='analista';
+
+SELECT max(salario) FROM cadfun
+WHERE depto='5';
+
+SELECT sum(salario) FROM cadfun
+WHERE funcao='analista';
+
+SELECT sum(salario) FROM cadfun
+WHERE funcao='analista' and depto='2';
+
+SELECT NOME, admissao from cadfun
+where day(admissao)=10;
+
+SELECT NOME, admissao from cadfun
+where  day(admissao)>5 and day(admissao)<10;
+
+SELECT NOME, admissao from cadfun
+where  day(admissao)>5 and day(admissao)<10 order by NOME;
+
+SELECT NOME, admissao from cadfun
+where  day(admissao)>5 and day(admissao)<10 order by NOME desc;
+
+SELECT NOME, admissao from cadfun
+where  admissao<='20/09/2006';
+
+SELECT NOME, admissao, datename(month,ADMISSAO) from cadfun
+where depto='5';
+
+select nome, depto, lower(nome) from cadfun
+where depto='3' or depto='5';
+
+SELECT NOME, admissao, depto from cadfun
+where  day(admissao)>5 and day(admissao)<10 and depto='3' or depto='5';
