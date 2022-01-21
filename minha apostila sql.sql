@@ -391,6 +391,6 @@ SELECT NOME, admissao, depto from cadfun
 where  day(admissao)>5 and day(admissao)<10 and depto='3' or depto='5';
 
 SELECT NOME, admissao, depto from cadfun
-where  day(admissao)>20 and day(admissao)<10 and depto='3' or depto='5';
+where  day(admissao)>30 and day(admissao)<20 and depto='3' or depto='5';
 
 
