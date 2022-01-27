@@ -393,11 +393,5 @@ where  day(admissao)>5 and day(admissao)<10 and depto='3' or depto='5';
 SELECT NOME, admissao, depto from cadfun
 where  day(admissao)>30 and day(admissao)<20 and depto='3' or depto='5';
 
-SELECT * FROM cadfun
-SELECT * FROM venda
-SELECT * FROM cliente
 
--- JUNÇÃO DE TABELAS
 
-SELECT venda.DUPLIC, cliente.NOME FROM cliente, venda
-WHERE cliente.CODCLI = venda.CODCLI;
