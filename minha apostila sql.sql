@@ -1276,5 +1276,23 @@ insert into venda values ('347711',5092.55,'20/11/2016','170');
 insert into venda values ('209967',9008.33,'10/05/2016','550');
 
 
+SELECT * FROM cliente
+SELECT * FROM venda
+
+-- Consulta que mostra código, o nome a quantidade de titulos e o total da dívida de cada cliente.
+select cliente.NOME, count(*) AS titulos, SUM(venda.VALOR) AS TOTAL
+FROM cliente, venda where cliente.codcli = venda.codcli
+group by cliente.nome;
+
+-- Consulta numeros de titulos vencidos agrupados e ordenados pelo nome da tabela cliente
+select cliente.NOME AS CLIENTE, COUNT(*) AS VENCIDOS
+FROM cliente, venda where cliente.codcli = venda.codcli
+AND VENCTO <='2003-12-31' group by cliente.nome ORDER BY cliente.NOME;
+
+-- Consulta de duplicata em atrazo anterior a data 31/12/1999,
+-- apresentando nome do cliente o valor da duplicata e dos juros
+select cliente.NOME, venda.VALOR, venda.VALOR * 0.10 AS JUROS, venda.VALOR * 1.10 AS TOTAL
+FROM cliente, venda where cliente.codcli = venda.codcli
+AND VENCTO <='1999-12-31' ORDER BY cliente.NOME;
 
 
