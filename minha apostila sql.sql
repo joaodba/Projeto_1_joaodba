@@ -1250,3 +1250,31 @@ where  day(admissao)>5 and day(admissao)<10 and depto='3' or depto='5';
 
 
 
+-- junção das tabelas
+
+select * from venda
+select * from cliente
+
+--consultar as duplicatas referente as tabelas venda e cliente
+select venda.DUPLIC, cliente.NOME from cliente, venda
+where cliente.CODCLI = venda.CODCLI;
+
+-- ordenar por nome a consulta das tabelas venda e cliente
+select venda.DUPLIC, cliente.NOME from cliente, venda
+where cliente.CODCLI = venda.CODCLI order by cliente.NOME;
+
+-- inserindo mais dados para exemplificar a junção
+insert into venda values ('235100',1500.00,'06/12/2015','500');
+insert into venda values ('203052',9008.33,'22/08/2015','550');
+insert into venda values ('922452',1211.98,'09/03/2016','340');
+insert into venda values ('999820',3110.22,'05/11/2015','170');
+insert into venda values ('223345',2112.11,'08/03/2016','230');
+insert into venda values ('222228',2390.00,'10/07/2016','170');
+insert into venda values ('111211',3535.00,'15/11/2016','230');
+insert into venda values ('907754',2056.90,'30/10/2015','340');
+insert into venda values ('347711',5092.55,'20/11/2016','170');
+insert into venda values ('209967',9008.33,'10/05/2016','550');
+
+
+
+
