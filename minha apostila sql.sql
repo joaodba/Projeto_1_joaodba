@@ -1295,4 +1295,27 @@ select cliente.NOME, venda.VALOR, venda.VALOR * 0.10 AS JUROS, venda.VALOR * 1.1
 FROM cliente, venda where cliente.codcli = venda.codcli
 AND VENCTO <='1999-12-31' ORDER BY cliente.NOME;
 
+select * from cadfun
+
+-- Visualização de Dados
+-- Cria uma tabela virtual a partir dos dados da tabela cadfun
+
+create view visao1 AS SELECT NOME,DEPTO,SALARIO FROM cadfun;
+
+select * from visao1
+
+-- Visão definida para apresentar os títulos em atraso a partir de 31/12/2005.
+
+create view visao2 AS SELECT cliente.NOME AS CLIENTE,
+COUNT(*) AS VENCIDOS FROM CLIENTE, VENDA WHERE cliente.CODCLI = venda.CODCLI
+AND VENCTO <='2005-12-31' GROUP BY cliente.NOME;
+
+SELECT * FROM visao2
+
+-- Visão3 combinação completa de todos os dados das tabelas cliente e venda.
+
+create view visao3 AS SELECT cliente.CODCLI, cliente.NOME, venda.DUPLIC,
+venda.VALOR,venda.VENCTO FROM cliente, venda WHERE cliente.CODCLI = venda.CODCLI
+
+SELECT * FROM visao3
 
