@@ -1319,4 +1319,23 @@ venda.VALOR,venda.VENCTO FROM cliente, venda WHERE cliente.CODCLI = venda.CODCLI
 SELECT * FROM visao3
 
 
+--Indexação de Tabelas
+
+create index indice1 on cadfun (nome);
+
+alter table cadfun add CPF char(11);
+
+update cadfun set CPF = '10020011199' WHERE CODFUN = 1;
+update cadfun set CPF = '10020022299' WHERE CODFUN = 6;
+update cadfun set CPF = '10020033399' WHERE CODFUN = 8;
+update cadfun set CPF = '10020044499' WHERE CODFUN = 10;
+update cadfun set CPF = '10020055599' WHERE CODFUN = 11;
+update cadfun set CPF = '10020066699' WHERE CODFUN = 12;
+update cadfun set CPF = '10020077799' WHERE CODFUN = 20;
+update cadfun set CPF = '10020088899' WHERE CODFUN = 21;
+update cadfun set CPF = '10022211199' WHERE CODFUN = 22;
+update cadfun set CPF = '10022233399' WHERE CODFUN = 24;
+
+
+
 
