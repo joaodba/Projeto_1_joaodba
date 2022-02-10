@@ -1381,4 +1381,8 @@ INSERT INTO caddis VALUES ('CG-300','FILOSOFIA',150);
 SELECT * FROM caddis;
 SELECT * FROM cadpro;
 
+-- Consulta apresentara a relação de disciplina ofertadas e os professores que as ministram
+SELECT caddis.CODDIS, caddis.NUMEDIS, cadpro.NOMEPRO
+FROM caddis, cadpro WHERE caddis.CODPROF = cadpro.CODPROP;
+
 
