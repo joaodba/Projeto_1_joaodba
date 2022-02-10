@@ -1376,9 +1376,15 @@ INSERT INTO caddis VALUES ('TI-500','PROGRAMACAO WEB',140);
 INSERT INTO caddis VALUES ('CG-100','MATEMÁTICA',150);
 INSERT INTO caddis VALUES ('CG-300','FILOSOFIA',150);
 
+
+use curso
+
 SELECT * FROM caddis;
 SELECT * FROM cadpro;
 
+-- Consulta apresentara a relação de disciplina ofertadas e os professores que as ministram
+SELECT caddis.CODDIS, caddis.NUMEDIS, cadpro.NOMEPRO
+FROM caddis, cadpro WHERE caddis.CODPROF = cadpro.CODPROP;
 
 
 
