@@ -1388,4 +1388,18 @@ SELECT * FROM cadpro;
 SELECT caddis.CODDIS, caddis.NUMEDIS, cadpro.NOMEPRO
 FROM caddis, cadpro WHERE caddis.CODPROF = cadpro.CODPROP;
 
+-- Procedimentos Armazenados
+create procedure sp_saudacao AS
+DECLARE @Mensagem CHAR(11)
+SET @Mensagem = 'Alo Mundo'
+PRINT @Mensagem
+
+-- Execute o comando abaixo
+exec sp_saudacao;
+
+-- Outro exemplo
+create procedure sp_dados AS
+SELECT NOME, SALARIO FROM cadfun
+--Execute o comando abaixo
+exec sp_dados
 
