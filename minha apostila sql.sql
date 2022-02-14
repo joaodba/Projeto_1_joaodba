@@ -1401,7 +1401,28 @@ SELECT NOME, SALARIO FROM cadfun
 --Execute o comando abaixo
 exec sp_dados
 
+-- Procedimentos Armazenados
+create procedure sp_decisao2 @valor INT AS
+DECLARE @Resto INTEGER
+DECLARE @Mensagem1 VARCHAR(50)
+DECLARE @Mensagem2 VARCHAR(50)
+SET @Resto = @valor % 3
+SET @Mensagem1 = 'e um valor divisivel por 3'
+SET @Mensagem2 = 'nao e um valor divisivel por 3'
+IF (@Resto = 0)
+  BEGIN
+    PRINT @Valor
+    PRINT @Mensagem1
+      END
+      ELSE
+        BEGIN
+          PRINT @Valor
+          PRINT @Mensagem2
+        END
+        ;
 
+  EXEC sp_decisao2 4;
+  EXEC sp_decisao2 9;
 
 
 
