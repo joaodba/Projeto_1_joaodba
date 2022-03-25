@@ -1426,6 +1426,8 @@ IF (@Resto = 0)
   EXEC sp_decisao2 4;
   EXEC sp_decisao2 9;
 
+  -- Teste de programaçao
+
 
 
 
