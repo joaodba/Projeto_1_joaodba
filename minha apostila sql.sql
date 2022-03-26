@@ -1431,13 +1431,13 @@ IF (@Resto = 0)
 select * from venda
 select * from cliente
 
-select cliente.NOME, count(*) as total from cliente,venda
-where cliente.CODCLI = venda.CODCLI group by cliente.NOME
+select cliente.nome, count(*) as total from cliente,venda
+where cliente.CODCLI = venda.CODCLI
+group by cliente.NOME order by cliente.NOME asc;
 
-select cliente.NOME, count(*) as TITULOS, SUM(VENDA.VALOR) AS TOTAL FROM CLIENTE,VENDA
-where cliente.CODCLI = venda.CODCLI group by cliente.NOME;
-
-
+select cliente.nome, count(*) as TITULOS, sum(venda.valor) as TOTAL from cliente, venda
+where cliente.CODCLI = venda.CODCLI
+group by cliente.NOME;
 
 
 
