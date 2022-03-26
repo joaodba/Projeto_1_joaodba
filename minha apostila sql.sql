@@ -1428,7 +1428,14 @@ IF (@Resto = 0)
 
   -- Teste de programaçao
 
+select * from venda
+select * from cliente
 
+select cliente.NOME, count(*) as total from cliente,venda
+where cliente.CODCLI = venda.CODCLI group by cliente.NOME
+
+select cliente.NOME, count(*) as TITULOS, SUM(VENDA.VALOR) AS TOTAL FROM CLIENTE,VENDA
+where cliente.CODCLI = venda.CODCLI group by cliente.NOME;
 
 
 
