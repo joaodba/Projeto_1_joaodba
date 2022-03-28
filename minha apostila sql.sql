@@ -1439,6 +1439,33 @@ select cliente.nome, count(*) as TITULOS, sum(venda.valor) as TOTAL from cliente
 where cliente.CODCLI = venda.CODCLI
 group by cliente.NOME;
 
+use virtualdc
+
+select cliente.NOME as cliente, count(*) as vencidos from cliente,venda
+where cliente.CODCLI = venda.CODCLI and VENCTO <= '2003-12-31'
+group by cliente.NOME order by cliente.NOME;
+
+select cliente.NOME, venda.VALOR, venda.VALOR * 0.10 as JUROS,
+venda.VALOR *1.10 as TOTAL from cliente, venda where cliente.CODCLI = venda.CODCLI
+and VENCTO <='1999-12-31' order by cliente.NOME
+
+--Visualização de dados
+CREATE VIEW visao1 as Select NOME, DEPTO, SALARIO from cadfun;
+
+select * from visao1
+
+create view visao2 as Select cliente.NOME as cliente, count(*) as VENCIDOS
+FROM cliente, venda WHERE cliente.CODCLI = venda.CODCLI
+AND VENCTO <= '2005-12-31' GROUP BY cliente.NOME
+
+select * from visao2
+
+create view visao3 as Select cliente.CODCLI, cliente.NOME, venda.DUPLIC,
+venda.VALOR,venda.VENCTO from cliente, venda where cliente.CODCLI=venda.CODCLI
+
+select * from visao3
+
+
 
 
 
