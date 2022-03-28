@@ -1437,7 +1437,7 @@ group by cliente.NOME order by cliente.NOME asc;
 
 select cliente.nome, count(*) as TITULOS, sum(venda.valor) as TOTAL from cliente, venda
 where cliente.CODCLI = venda.CODCLI
-group by cliente.NOME
+group by cliente.NOME;
 
 
 
