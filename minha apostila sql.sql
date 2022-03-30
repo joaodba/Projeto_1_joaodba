@@ -1465,8 +1465,67 @@ venda.VALOR,venda.VENCTO from cliente, venda where cliente.CODCLI=venda.CODCLI
 
 select * from visao3
 
+select * from caddis;
+select * from cadpro;
 
+Select caddis.CODDIS, caddis.NUMEDIS, cadpro.NOMEPRO from caddis, cadpro
+where caddis.CODPROF = cadpro.CODPROP order by NOMEPRO;
 
+-- Sub-Rotinas
 
+use virtualdc
+
+create procedure sp_saudacao as 
+Declare @Mensagem char(20)
+Set @Mensagem = 'Alô, Mundo'
+Print @Mensagem
+
+exec sp_saudacao;
+
+Create procedure teste as
+Declare @Mensagem char (25)
+Set @Mensagem = 'Vamos Focar no Estudo'
+Print @Mensagem
+
+-- Dois paramêtro de entrada e um parâmetro de saida
+CREATE PROCEDURE sp_calculo @A INT, @B INT, @S INT OUTPUT AS SET @S = @A + @B
+DECLARE @SAIDA INT;
+EXEC sp_calculo 5, 8, @saida output;
+PRINT @SAIDA;
+
+-- Recebe dois valores reais com os parâmetros e apresenta o resultado da adição dos valores
+-- caso a soma seja maior ou igual a 10. Caso não seja satisfeita não apresenta nada
+
+Create Procedure sp_decisao1 @A FLOAT, @B FLOAT AS
+DECLARE @X FLOAT
+SET @X = @A + @B
+IF (@X >= 10)
+PRINT @X
+
+EXEC sp_decisao1 4.4,5.5;
+EXEC sp_decisao1 5.0, 6.0;
+
+-- Recebe a entrada de um parâmetro numérico inteiro e exibe uma mensagem informando se o
+-- numero é ou não divisível por 3.
+
+Create Procedure sp_decisao2 @valor INT AS
+DECLARE @Resto INTEGER
+DECLARE @Mensagem1 VARCHAR(50)
+DECLARE @Mensagem2 VARCHAR(50)
+SET @Resto = @valor % 3
+SET @Mensagem1 = 'é um valor divisivel por 3'
+SET @Mensagem2 = 'não é um valor divisivel por 3'
+IF (@Resto = 0)
+BEGIN
+PRINT @Valor
+PRINT @Mensagem1
+END
+ELSE
+BEGIN
+PRINT @Valor
+PRINT @Mensagem2
+
+EXEC sp_decisao2 4;
+EXEC sp_decisao2 9;
 
 
