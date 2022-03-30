@@ -1529,3 +1529,35 @@ EXEC sp_decisao2 4;
 EXEC sp_decisao2 9;
 
 
+Use virtualdc
+-- Mostra o valor Fatorial de um numero inteiro qualquer usando o comando WHILE (LAÇO)
+Create Procedure sp_fat @valor INT AS
+Declare @Fator INT, @I INT
+SET @Fator = 1
+SET @I = 1
+WHILE (@I <= @valor)
+begin
+set @Fator = @Fator * @I
+set @I = @I + 1
+END
+PRINT @Fator
+
+exec sp_fat 5;
+exec sp_fat 6;
+
+SELECT * FROM morto;
+SELECT * FROM cadfun;
+-- Insere o registro no arquivo morto e deleta o registro inserido da tabela cadfun
+Create Procedure sp_demite @codigo int as
+insert into morto
+select codfun, nome, depto, funcao, salario, admissao, filhos, cpf from cadfun
+where CODFUN = @codigo
+delete from cadfun where CODFUN=@codigo
+
+exec sp_demite 23;
+
+
+
+
+
+
