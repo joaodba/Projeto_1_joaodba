@@ -1556,6 +1556,52 @@ delete from cadfun where CODFUN=@codigo
 
 exec sp_demite 23;
 
+use virtualdc;
+-- Gatilhos ou Disparadores
+CREATE TABLE auditoria (
+  USUARIO VARCHAR(40),
+  ACAO    VARCHAR(9),
+  DATA    DATE,
+  CODIGO  INT
+  );
+
+-- Gatilho para Inserir dados na tabela cadfun
+CREATE TRIGGER tr_auditor1 ON cadfun FOR INSERT AS
+INSERT INTO auditoria SELECT
+SUSER_SNAME(),
+'Cadastrou',
+GETDATE(),
+CODFUN
+FROM inserted;
+
+-- Vamos inserir um registro.
+
+INSERT INTO cadfun VALUES (60, 'MARINALVA DA SILVA','3','PROGRAMADOR', 1200.00,'19/10/2016',0,
+'50022255599');
+
+SELECT * FROM cadfun;
+SELECT * FROM auditoria;
+
+CREATE TRIGGER tr_auditor2 ON cadfun FOR UPDATE AS
+INSERT INTO auditoria SELECT
+SUSER_SNAME(),
+'Alterou',
+GETDATE(),
+CODFUN
+FROM inserted;
+
+-- Fazer uma alteração no Registro do funcionarios antonio
+
+UPDATE cadfun SET FUNCAO = 'SUPERINTENDENTE'
+WHERE NOME = 'ANTONIO DA SILVA';
+
+UPDATE cadfun SET SALARIO = SALARIO * 1.05;
+
+SELECT * FROM auditoria;
+-- Alterar o codigo do funcionario Antonio dos santos
+UPDATE cadfun SET CODFUN = 13 WHERE CODFUN = 12;
+
+SELECT * FROM auditoria;
 
 
 
