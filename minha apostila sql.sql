@@ -1446,7 +1446,7 @@ where cliente.CODCLI = venda.CODCLI and VENCTO <= '2003-12-31'
 group by cliente.NOME order by cliente.NOME;
 
 select cliente.NOME, venda.VALOR, venda.VALOR * 0.10 as JUROS,
-venda.VALOR *1.10 as TOTAL from cliente, venda where cliente.CODCLI = venda.CODCLI
+venda.VALOR *1.10 as TOTAL, VENCTO, DUPLIC,CIDADE from cliente, venda where cliente.CODCLI = venda.CODCLI
 and VENCTO <='1999-12-31' order by cliente.NOME
 
 --Visualização de dados
