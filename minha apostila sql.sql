@@ -296,28 +296,26 @@ SELECT column1, column2, ...
 FROM table_name
 WHERE columnN LIKE condição 1 OR condição 2
 --procura clientes com o nome começando com 'F'
-SELECT * FROM Customers
-WHERE CustomerName LIKE 'F%';
+SELECT * FROM cadastros
+WHERE CustomerName LIKE 'B%';
 --procura clientes com o nome terminando com 'F'
-SELECT * FROM Customers
-WHERE CustomerName LIKE '%F';
+SELECT * FROM cadastros
+WHERE CustomerName LIKE '%e';
 --procura clientes que possuam 'ei' em qual quer posição
-SELECT * FROM Customers
-WHERE CustomerName LIKE '%ei%';
+SELECT * FROM cadastros
+WHERE CustomerName LIKE '%sc%';
 --procura clientes que possuem 'u' na 3º posição, '_' = um caracter
-SELECT * FROM Customers
+SELECT * FROM cadastros
 WHERE CustomerName LIKE '__u%';
 --procura cliente que começar com 'a' e termina com 'o'
-SELECT * FROM Customers
-WHERE ContactName LIKE 'a%o';
+SELECT * FROM cadastros
+WHERE ContactName LIKE 'a%t';
 --procura cliente que NÃO POSSUI 'a'
-SELECT * FROM Customers
+SELECT * FROM cadastros
 WHERE CustomerName NOT LIKE 'a%';
 --seleciona todos que iniciam com b,c, ou d
-SELECT * FROM Customers
+SELECT * FROM cadastros
 WHERE City LIKE '[bcd]%';
-```
-
 
 
 ##IN ( EM ) = Usado como uma condição para uma valor que está 'em' um determinado campo
