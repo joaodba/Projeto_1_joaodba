@@ -1293,6 +1293,10 @@ select cliente.NOME, venda.VALOR, venda.VALOR * 0.10 AS JUROS, venda.VALOR * 1.1
 FROM cliente, venda where cliente.codcli = venda.codcli
 AND VENCTO <='1999-12-31' ORDER BY cliente.NOME;
 
+select cliente.NOME,VENDA.DUPLIC, venda.VALOR, venda.VALOR * 0.10 AS JUROS, venda.VALOR * 1.10 AS TOTAL
+FROM cliente, venda where cliente.codcli = venda.codcli
+ORDER BY cliente.NOME;
+
 select * from cadfun
 
 -- Visualização de Dados
@@ -1600,9 +1604,6 @@ SELECT * FROM auditoria;
 UPDATE cadfun SET CODFUN = 13 WHERE CODFUN = 12;
 
 SELECT * FROM auditoria;
-
--- função auditoria
-
 
 
 
