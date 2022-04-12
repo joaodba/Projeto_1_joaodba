@@ -1116,7 +1116,7 @@ Script:
 SELECT COUNT Country
 FROM Cadastros
 GROUP BY Country
-HAVING COUNT Country > 3;
+HAVING COUNT Country > 5;
 
 
 
@@ -1592,7 +1592,7 @@ GETDATE(),
 CODFUN
 FROM inserted;
 
--- Fazer uma alteração no Registro do funcionarios antonio
+---- Fazer uma alteração no Registro do funcionarios antonio
 
 UPDATE cadfun SET FUNCAO = 'SUPERINTENDENTE'
 WHERE NOME = 'ANTONIO DA SILVA';
@@ -1602,6 +1602,7 @@ UPDATE cadfun SET SALARIO = SALARIO * 1.05;
 SELECT * FROM auditoria;
 -- Alterar o codigo do funcionario Antonio dos santos
 UPDATE cadfun SET CODFUN = 13 WHERE CODFUN = 12;
+
 
 SELECT * FROM auditoria;
 
