@@ -1606,5 +1606,5 @@ UPDATE cadfun SET CODFUN = 13 WHERE CODFUN = 12;
 
 SELECT * FROM auditoria;
 
-
+pausa da apostila de SQL
 
