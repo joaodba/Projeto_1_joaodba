@@ -44,6 +44,7 @@ if 5 > 2:
 
 if 5 > 2:
  print("Five is greater than two!") 
+
 if 5 > 2:
         print("Five is greater than two!") 
 
@@ -529,10 +530,577 @@ y = str(2)    # y will be '2'
 z = str(3.0)  # z will be '3.0'
 
 
+Cordas
+
+Strings em python são cercadas por aspas simples ou aspas duplas.
+
+'olá' é o mesmo que "olá" .
+
+Você pode exibir um literal de string com a print()função:
+
+Exemplo
+print("Hello")
+print('Hello')
+
+Atribuir String a uma Variável
+
+A atribuição de uma string a uma variável é feita com o nome da variável seguido por um sinal de igual e a string:
+
+Exemplo
+a = "Hello"
+print(a)
+
+Strings de várias linhas
+
+Você pode atribuir uma string de várias linhas a uma variável usando três aspas:
+
+Exemplo
+Você pode usar três aspas duplas:
+
+a = """Lorem ipsum dolor sit amet,
+consectetur adipiscing elit,
+sed do eiusmod tempor incididunt
+ut labore et dolore magna aliqua."""
+print(a)
+
+Ou três aspas simples:
+
+Exemplo
+a = '''Lorem ipsum dolor sit amet,
+consectetur adipiscing elit,
+sed do eiusmod tempor incididunt
+ut labore et dolore magna aliqua.'''
+print(a)
+
+Strings são Arrays
+
+Como muitas outras linguagens de programação populares, strings em Python são arrays de bytes que representam caracteres unicode.
+
+No entanto, o Python não possui um tipo de dados de caractere, um único caractere é simplesmente uma string com um comprimento de 1.
+
+Colchetes podem ser usados para acessar elementos da string.
+
+Exemplo
+
+Pegue o caractere na posição 1 (lembre-se que o primeiro caractere tem a posição 0):
+
+a = "Hello, World!"
+print(a[1])
+
+Fazendo um loop em uma string
+
+Como strings são arrays, podemos fazer um loop pelos caracteres em uma string, com um forloop.
+
+Exemplo
+
+Percorra as letras da palavra "banana":
+
+for x in "banana":
+  print(x)
+
+Comprimento da string
+
+Para obter o comprimento de uma string, use a len()função.
+
+Exemplo
+A len()função retorna o comprimento de uma string:
+
+a = "Hello, World!"
+print(len(a))
+
+String de verificação
+
+Para verificar se uma determinada frase ou caractere está presente em uma string, podemos usar a palavra-chave in.
+
+Exemplo
+Verifique se "grátis" está presente no texto a seguir:
+
+txt = "The best things in life are free!"
+print("free" in txt)
+
+Use-o em uma ifdeclaração:
+
+Exemplo
+
+Imprima apenas se "grátis" estiver presente:
+
+txt = "The best things in life are free!"
+if "free" in txt:
+  print("Yes, 'free' is present.")
+
+Verifique se NÃO
+
+Para verificar se uma determinada frase ou caractere NÃO está presente em uma string, podemos usar a palavra-chave not in.
+
+Exemplo
+
+Verifique se "caro" NÃO está presente no texto a seguir:
+
+txt = "The best things in life are free!"
+print("expensive" not in txt)
+Use-o em uma ifdeclaração:
+
+Exemplo
+
+imprima somente se "caro" NÃO estiver presente:
+
+txt = "The best things in life are free!"
+if "expensive" not in txt:
+  print("No, 'expensive' is NOT present.")
+
+Fatiamento
+
+Você pode retornar um intervalo de caracteres usando a sintaxe de fatia.
+
+Especifique o índice inicial e o índice final, separados por dois pontos, para retornar uma parte da string.
+
+Exemplo
+Obtenha os personagens da posição 2 para a posição 5 (não incluído):
+
+b = "Hello, World!"
+print(b[2:5])
+
+Nota: O primeiro caractere tem índice 0.
+
+Fatia desde o início
+Ao deixar de fora o índice inicial, o intervalo começará no primeiro caractere:
+
+Exemplo
+
+Obtenha os personagens desde o início até a posição 5 (não incluído):
+
+b = "Hello, World!"
+print(b[:5])
 
 
+Fatie até o fim
+Ao deixar de fora o índice final , o intervalo irá para o final:
+
+Exemplo
+
+Pegue os personagens da posição 2 e até o final:
+
+b = "Hello, World!"
+print(b[2:])
+
+Indexação negativa
+
+Use índices negativos para iniciar a fatia a partir do final da string:
+
+Exemplo
+Obtenha os personagens:
+
+De: "o" em "Mundo!" (posição -5)
+
+Para, mas não incluído: "d" em "Mundo!" (posição -2):
+
+b = "Hello, World!"
+print(b[-5:-2])
+
+Python tem um conjunto de métodos integrados que você pode usar em strings.
+
+Maiúsculas
+
+Exemplo
+O upper()método retorna a string em maiúsculas:
+
+a = "Hello, World!"
+print(a.upper())
+
+Minúsculas
+
+Exemplo
+O lower()método retorna a string em letras minúsculas:
+
+a = "Hello, World!"
+print(a.lower())
+
+Remover espaço em branco
+
+Espaço em branco é o espaço antes e/ou depois do texto real e, muitas vezes, você deseja remover esse espaço.
+
+Exemplo
+
+O strip()método remove qualquer espaço em branco do início ou do fim:
+
+a = " Hello, World! "
+print(a.strip()) # returns "Hello, World!"
 
 
+Substituir Cadeia
 
+Exemplo
+O replace()método substitui uma string por outra string:
+
+a = "Hello, World!"
+print(a.replace("H", "J"))
+
+Sequência dividida
+
+O split()método retorna uma lista onde o texto entre o separador especificado se torna os itens da lista.
+
+Exemplo
+O split()método divide a string em substrings se encontrar instâncias do separador:
+
+a = "Hello, World!"
+print(a.split(",")) # returns ['Hello', ' World!']
+
+Concatenação de String
+
+Para concatenar ou combinar duas strings você pode usar o operador +.
+
+Exemplo
+Mesclar variável acom variável b em variável c:
+
+a = "Hello"
+b = "World"
+c = a + b
+print(c)
+
+Exemplo
+Para adicionar um espaço entre eles, adicione um " ":
+
+a = "Hello"
+b = "World"
+c = a + " " + b
+print(c)
+
+Formato de string
+
+Como aprendemos no capítulo Variáveis do Python, não podemos combinar strings e números assim:
+
+Exemplo
+age = 36
+txt = "My name is John, I am " + age
+print(txt)
+
+Mas podemos combinar strings e números usando o format()método!
+
+O format()método pega os argumentos passados, os formata e os coloca na string onde {}estão os espaços reservados:
+
+Exemplo
+Use o format()método para inserir números em strings:
+
+age = 36
+txt = "My name is John, and I am {}"
+print(txt.format(age))
+
+O método format() recebe um número ilimitado de argumentos e são colocados nos respectivos espaços reservados:
+
+Exemplo
+quantity = 3
+itemno = 567
+price = 49.95
+myorder = "I want {} pieces of item {} for {} dollars."
+print(myorder.format(quantity, itemno, price))
+
+Você pode usar números de índice {0}para garantir que os argumentos sejam colocados nos espaços reservados corretos:
+
+Exemplo
+quantity = 3
+itemno = 567
+price = 49.95
+myorder = "I want to pay {2} dollars for {0} pieces of item {1}."
+print(myorder.format(quantity, itemno, price))
+
+Caractere de Fuga
+
+Para inserir caracteres ilegais em uma string, use um caractere de escape.
+
+Um caractere de escape é uma barra invertida \seguida pelo caractere que você deseja inserir.
+
+Um exemplo de um caractere ilegal é uma aspa dupla dentro de uma string que é cercada por aspas duplas:
+
+Exemplo
+
+Você receberá um erro se usar aspas duplas dentro de uma string cercada por aspas duplas:
+
+txt = "We are the so-called "Vikings" from the north."
+Para corrigir esse problema, use o caractere de escape \":
+
+Exemplo
+O caractere de escape permite que você use aspas duplas quando normalmente não seria permitido:
+
+txt = "We are the so-called \"Vikings\" from the north."
+Caracteres de escape
+Outros caracteres de escape usados em Python:
+
+Code  Result 
+\'  Single Quote  
+\\  Backslash 
+\n  New Line  
+\r  Carriage Return 
+\t  Tab 
+\b  Backspace 
+\f  Form Feed 
+\ooo  Octal value 
+\xhh  Hex value
+
+Métodos de string
+Python tem um conjunto de métodos integrados que você pode usar em strings.
+
+Nota: Todos os métodos de string retornam novos valores. Eles não alteram a string original.
+
+Method        Description
+capitalize()  Converts the first character to upper case
+casefold()    Converts string into lower case
+center()      Returns a centered string
+count()       Returns the number of times a specified value occurs in a string
+encode()      Returns an encoded version of the string
+endswith()    Returns true if the string ends with the specified value
+expandtabs()  Sets the tab size of the string
+find()        Searches the string for a specified value and returns the position of where it was found
+format()      Formats specified values in a string
+format_map()  Formats specified values in a string
+index()       Searches the string for a specified value and returns the position of where it was found
+isalnum()     Returns True if all characters in the string are alphanumeric
+isalpha()     Returns True if all characters in the string are in the alphabet
+isdecimal()   Returns True if all characters in the string are decimals
+isdigit()     Returns True if all characters in the string are digits
+isidentifier()Returns True if the string is an identifier
+islower()     Returns True if all characters in the string are lower case
+isnumeric()   Returns True if all characters in the string are numeric
+isprintable() Returns True if all characters in the string are printable
+isspace()     Returns True if all characters in the string are whitespaces
+istitle()     Returns True if the string follows the rules of a title
+isupper()     Returns True if all characters in the string are upper case
+join()        Joins the elements of an iterable to the end of the string
+ljust()       Returns a left justified version of the string
+lower()       Converts a string into lower case
+lstrip()      Returns a left trim version of the string
+maketrans()   Returns a translation table to be used in translations
+partition()   Returns a tuple where the string is parted into three parts
+replace()     Returns a string where a specified value is replaced with a specified value
+rfind()       Searches the string for a specified value and returns the last position of where it was found
+rindex()      Searches the string for a specified value and returns the last position of where it was found
+rjust()       Returns a right justified version of the string
+rpartition()  Returns a tuple where the string is parted into three parts
+rsplit()      Splits the string at the specified separator, and returns a list
+rstrip()      Returns a right trim version of the string
+split()       Splits the string at the specified separator, and returns a list
+splitlines()  Splits the string at line breaks and returns a list
+startswith()  Returns true if the string starts with the specified value
+strip()       Returns a trimmed version of the string
+swapcase()    Swaps cases, lower case becomes upper case and vice versa
+title()       Converts the first character of each word to upper case
+translate()   Returns a translated string
+upper()       Converts a string into upper case
+zfill()       Fills the string with a specified number of 0 values at the beginning
+
+
+Booleanos representam um dos dois valores: True ou False.
+
+Valores Booleanos
+Na programação, muitas vezes você precisa saber se uma expressão é True ou False.
+
+Você pode avaliar qualquer expressão em Python e obter uma das duas respostas, True ou False.
+
+Quando você compara dois valores, a expressão é avaliada e o Python retorna a resposta booleana:
+
+Exemplo
+print(10 > 9)
+print(10 == 9)
+print(10 < 9)
+
+Quando você executa uma condição em uma instrução if, o Python retorna Trueou False:
+
+Exemplo
+Imprima uma mensagem com base em se a condição é True ou False:
+
+a = 200
+b = 33
+
+if b > a:
+  print("b is greater than a")
+else:
+  print("b is not greater than a")
+
+Avaliar Valores e Variáveis
+
+A bool()função permite avaliar qualquer valor e dar a você True ou False em troca,
+
+Exemplo
+Avalie uma string e um número:
+
+print(bool("Hello"))
+print(bool(15))
+
+Exemplo
+Avalie duas variáveis:
+
+x = "Hello"
+y = 15
+
+print(bool(x))
+print(bool(y))
+
+A maioria dos valores são verdadeiros
+
+Quase qualquer valor é avaliado True se tiver algum tipo de conteúdo.
+
+Qualquer string é True, exceto strings vazias.
+
+Qualquer número é True, exceto 0.
+
+Qualquer lista, tupla, conjunto e dicionário são True, exceto os vazios.
+
+Exemplo
+O seguinte retornará True:
+
+bool("abc")
+bool(123)
+bool(["apple", "cherry", "banana"])
+
+Alguns valores são falsos
+Na verdade, não há muitos valores avaliados para False, exceto valores vazios, como (), [], {}, "", o número 0 e o valor None. E, claro, o valor é False avaliado como False.
+
+Exemplo
+O seguinte retornará False:
+
+bool(False)
+bool(None)
+bool(0)
+bool("")
+bool(())
+bool([])
+bool({})
+
+Mais um valor, ou objeto neste caso, é avaliado como False, e isso é se você tem um objeto que é feito de uma classe com uma __len__função que retorna 0 ou False:
+
+Exemplo
+class myclass():
+  def __len__(self):
+    return 0
+
+myobj = myclass()
+print(bool(myobj))
+
+Funções podem retornar um booleano
+Você pode criar funções que retornam um valor booleano:
+
+Exemplo
+Imprima a resposta de uma função:
+
+def myFunction() :
+  return True
+
+print(myFunction())
+
+Você pode executar o código com base na resposta booleana de uma função:
+
+Exemplo
+Imprima "SIM!" se a função retornar True, caso contrário imprima "NO!":
+
+def myFunction() :
+  return True
+
+if myFunction():
+  print("YES!")
+else:
+  print("NO!")
+
+O Python também possui muitas funções internas que retornam um valor booleano, como a isinstance() função, que pode ser usada para determinar se um objeto é de um determinado tipo de dados:
+
+Exemplo
+Verifique se um objeto é um inteiro ou não:
+
+x = 200
+print(isinstance(x, int))
+
+
+Operadores Python
+
+Os operadores são usados para realizar operações em variáveis e valores.
+
+No exemplo abaixo, usamos o +operador para somar dois valores:
+
+Exemplo
+print(10 + 5)
+
+Python divide os operadores nos seguintes grupos:
+
+Operadores aritméticos
+Operadores de atribuição
+Operadores de comparação
+Operadores lógicos
+Operadores de identidade
+Operadores de associação
+Operadores bit a bit
+Operadores aritméticos Python
+
+Os operadores aritméticos são usados com valores numéricos para realizar operações matemáticas comuns:
+
+Operator       Name            Example
++              Addition        x + y 
+-              Subtraction     x - y 
+*              Multiplication  x * y 
+/              Division        x / y 
+%              Modulus         x % y 
+**             Exponentiation  x ** y  
+//             Floor division  x // y  
+
+Operadores de atribuição Python
+Os operadores de atribuição são usados para atribuir valores a variáveis:
+
+Operator  Example    Same As
+=         x = 5      x = 5 
++=        x += 3     x = x + 3 
+-=        x -= 3     x = x - 3 
+*=        x *= 3     x = x * 3 
+/=        x /= 3     x = x / 3 
+%=        x %= 3     x = x % 3 
+//=       x //= 3    x = x // 3  
+**=       x **= 3    x = x ** 3  
+&=        x &= 3     x = x & 3 
+|=        x |= 3     x = x | 3 
+^=        x ^= 3     x = x ^ 3 
+>>=       x >>= 3    x = x >> 3  
+<<=       x <<= 3    x = x << 3  
+
+
+Operadores de comparação Python
+
+Os operadores de comparação são usados para comparar dois valores:
+
+Operator     Name                      Example
+==           Equal                     x == y  
+!=           Not equal                 x != y  
+>            Greater than              x > y 
+<            Less than                 x < y 
+>=           Greater than or equal to  x >= y  
+<=           Less than or equal to     x <= y 
+
+Operadores lógicos Python
+Os operadores lógicos são usados para combinar instruções condicionais:
+
+Operator     Description                                              Example
+and          Returns True if both statements are true                 x < 5 and  x < 10 
+or           Returns True if one of the statements is true            x < 5 or x < 4  
+not          Reverse the result, returns False if the result is true  not(x < 5 and x < 10) 
+
+Operadores de identidade Python
+Os operadores de identidade são usados para comparar os objetos, não se forem iguais, mas se forem realmente o mesmo objeto, com a mesma localização de memória:
+
+Operator  Description                                             Example
+is        Returns True if both variables are the same object      x is y  
+is not    Returns True if both variables are not the same object  x is not y  
+
+Operadores de associação Python
+Os operadores de associação são usados para testar se uma sequência é apresentada em um objeto:
+
+Operator  Description                                                                       Example
+in        Returns True if a sequence with the specified value is present in the object      x in y  
+not in    Returns True if a sequence with the specified value is not present in the object  x not in y  
+
+Operadores Bitwise Python
+Operadores bit a bit são usados para comparar números (binários):
+
+Operator  Name                   Description
+&         AND                    Sets each bit to 1 if both bits are 1
+|         OR                     Sets each bit to 1 if one of two bits is 1
+ ^        XOR                    Sets each bit to 1 if only one of two bits is 1
+~         NOT                    Inverts all the bits
+<<        Zero fill left shift   Shift left by pushing zeros in from the right and let the leftmost bits fall off
+>>        Signed right shift     Shift right by pushing copies of the leftmost bit in from the left, and let the rightmost bits fall off
 
 
