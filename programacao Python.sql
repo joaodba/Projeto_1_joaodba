@@ -1079,7 +1079,8 @@ or           Returns True if one of the statements is true            x < 5 or x
 not          Reverse the result, returns False if the result is true  not(x < 5 and x < 10) 
 
 Operadores de identidade Python
-Os operadores de identidade são usados para comparar os objetos, não se forem iguais, mas se forem realmente o mesmo objeto, com a mesma localização de memória:
+Os operadores de identidade são usados para comparar os objetos, não se forem iguais, mas se forem
+ realmente o mesmo objeto, com a mesma localização de memória:
 
 Operator  Description                                             Example
 is        Returns True if both variables are the same object      x is y  
@@ -1101,14 +1102,16 @@ Operator  Name                   Description
  ^        XOR                    Sets each bit to 1 if only one of two bits is 1
 ~         NOT                    Inverts all the bits
 <<        Zero fill left shift   Shift left by pushing zeros in from the right and let the leftmost bits fall off
->>        Signed right shift     Shift right by pushing copies of the leftmost bit in from the left, and let the rightmost bits fall off
+>>        Signed right shift     Shift right by pushing copies of the leftmost bit in from the left,
+ and let the rightmost bits fall off
 
 
 Lista
 
 As listas são usadas para armazenar vários itens em uma única variável.
 
-As listas são um dos 4 tipos de dados internos do Python usados para armazenar coleções de dados, os outros 3 são Tuple , Set e Dictionary , todos com qualidades e usos diferentes.
+As listas são um dos 4 tipos de dados internos do Python usados para armazenar coleções de dados,
+ os outros 3 são Tuple , Set e Dictionary , todos com qualidades e usos diferentes.
 
 As listas são criadas usando colchetes:
 
@@ -1125,7 +1128,8 @@ Os itens da lista são indexados, o primeiro item possui índice [0], o segundo 
 
 Encomendado
 
-Quando dizemos que as listas estão ordenadas, significa que os itens têm uma ordem definida, e essa ordem não será alterada.
+Quando dizemos que as listas estão ordenadas, significa que os itens têm uma ordem definida,
+ e essa ordem não será alterada.
 
 Se você adicionar novos itens a uma lista, os novos itens serão colocados no final da lista.
 
@@ -1133,7 +1137,8 @@ Nota: Existem alguns métodos de lista que irão alterar a ordem, mas em geral: 
 
 Mutável
 
-A lista é mutável, o que significa que podemos alterar, adicionar e remover itens em uma lista após ela ter sido criada.
+A lista é mutável, o que significa que podemos alterar, adicionar e remover itens em uma 
+lista após ela ter sido criada.
 
 Permitir duplicatas
 
@@ -1204,9 +1209,12 @@ Dicionário é uma coleção ordenada** e mutável. Nenhum membro duplicado.
 
 *Os itens do conjunto são imutáveis, mas você pode remover e/ou adicionar itens sempre que quiser.
 
-**A partir da versão 3.7 do Python, os dicionários são ordenados . No Python 3.6 e anteriores, os dicionários não são ordenados .
+**A partir da versão 3.7 do Python, os dicionários são ordenados . No Python 3.6 e anteriores, os 
+dicionários não são ordenados .
 
-Ao escolher um tipo de coleção, é útil entender as propriedades desse tipo. Escolher o tipo certo para um determinado conjunto de dados pode significar retenção de significado e pode significar um aumento na eficiência ou segurança.
+Ao escolher um tipo de coleção, é útil entender as propriedades desse tipo. Escolher o tipo certo 
+para um determinado conjunto de dados pode significar retenção de significado e pode significar um 
+aumento na eficiência ou segurança.
 
 
 Acessar itens
@@ -1300,7 +1308,8 @@ print(thislist)
 
 Alterar um intervalo de valores de itens
 
-Para alterar o valor dos itens dentro de um intervalo específico, defina uma lista com os novos valores e consulte o intervalo de números de índice onde deseja inserir os novos valores:
+Para alterar o valor dos itens dentro de um intervalo específico, defina uma lista 
+com os novos valores e consulte o intervalo de números de índice onde deseja inserir os novos valores:
 
 Exemplo
 Altere os valores "banana" e "cherry" pelos valores "blackcurrant" e "watermelon":
@@ -1309,7 +1318,8 @@ thislist = ["apple", "banana", "cherry", "orange", "kiwi", "mango"]
 thislist[1:3] = ["blackcurrant", "watermelon"]
 print(thislist)
 
-Se você inserir mais itens do que substituir, os novos itens serão inseridos onde você especificou e os itens restantes serão movidos de acordo:
+Se você inserir mais itens do que substituir, os novos itens serão inseridos onde você 
+especificou e os itens restantes serão movidos de acordo:
 
 Exemplo
 
@@ -1319,9 +1329,11 @@ thislist = ["apple", "banana", "cherry"]
 thislist[1:2] = ["blackcurrant", "watermelon"]
 print(thislist)
 
-Nota: O comprimento da lista mudará quando o número de itens inseridos não corresponder ao número de itens substituídos.
+Nota: O comprimento da lista mudará quando o número de itens inseridos não corresponder 
+ao número de itens substituídos.
 
-Se você inserir menos itens do que substituir, os novos itens serão inseridos onde você especificou e os itens restantes serão movidos de acordo:
+Se você inserir menos itens do que substituir, os novos itens serão inseridos onde você
+ especificou e os itens restantes serão movidos de acordo:
 
 Exemplo
 Altere o segundo e o terceiro valor substituindo-o por um valor:
@@ -1383,7 +1395,8 @@ print(thislist)
 Os elementos serão adicionados ao final da lista.
 
 Adicionar qualquer iterável
-O extend()método não precisa anexar listas , você pode adicionar qualquer objeto iterável (tuplas, conjuntos, dicionários etc.).
+O extend()método não precisa anexar listas , você pode adicionar qualquer objeto 
+iterável (tuplas, conjuntos, dicionários etc.).
 
 Exemplo
 Adicionar elementos de uma tupla a uma lista:
@@ -1479,7 +1492,8 @@ O iterável criado no exemplo acima é [0, 1, 2].
 Usando um loop while
 Você pode percorrer os itens da lista usando um whileloop.
 
-Use a len()função para determinar o comprimento da lista, então comece em 0 e faça um loop pelos itens da lista consultando seus índices.
+Use a len()função para determinar o comprimento da lista, então comece em 0 e faça um 
+loop pelos itens da lista consultando seus índices.
 
 Lembre-se de aumentar o índice em 1 após cada iteração.
 
@@ -1503,7 +1517,8 @@ thislist = ["apple", "banana", "cherry"]
 
 
 Compreensão da lista
-A compreensão de lista oferece uma sintaxe mais curta quando você deseja criar uma nova lista com base nos valores de uma lista existente.
+A compreensão de lista oferece uma sintaxe mais curta quando você deseja criar uma nova lista 
+com base nos valores de uma lista existente.
 
 Exemplo:
 
@@ -1542,7 +1557,8 @@ Exemplo
 Aceite apenas itens que não sejam "maçã":
 
 newlist = [x for x in fruits if x != "apple"]
-A condição if x != "apple"  retornará True para todos os elementos exceto "maçã", fazendo com que a nova lista contenha todas as frutas, exceto "maçã".
+A condição if x != "apple"  retornará True para todos os elementos exceto "maçã",
+ fazendo com que a nova lista contenha todas as frutas, exceto "maçã".
 
 A condição é opcional e pode ser omitida:
 
@@ -1566,7 +1582,8 @@ Aceite apenas números inferiores a 5:
 newlist = [x for x in range(10) if x < 5]
 
 Expressão
-A expressão é o item atual na iteração, mas também é o resultado, que você pode manipular antes que termine como um item de lista na nova lista:
+A expressão é o item atual na iteração, mas também é o resultado, que você pode manipular 
+antes que termine como um item de lista na nova lista:
 
 Exemplo
 Defina os valores na nova lista para maiúsculas:
@@ -1641,7 +1658,8 @@ print(thislist)
 
 Classificação sem distinção entre maiúsculas e minúsculas
 
-Por padrão, o sort()método diferencia maiúsculas de minúsculas, resultando em todas as letras maiúsculas classificadas antes das minúsculas:
+Por padrão, o sort()método diferencia maiúsculas de minúsculas, resultando em todas as letras 
+maiúsculas classificadas antes das minúsculas:
 
 Exemplo
 
@@ -1653,7 +1671,8 @@ print(thislist)
 
 Felizmente, podemos usar funções internas como funções-chave ao classificar uma lista.
 
-Portanto, se você deseja uma função de classificação que não diferencia maiúsculas de minúsculas, use str.lower como uma função de chave:
+Portanto, se você deseja uma função de classificação que não diferencia maiúsculas de minúsculas, use 
+str.lower como uma função de chave:
 
 Exemplo
 
@@ -1675,6 +1694,200 @@ Inverta a ordem dos itens da lista:
 thislist = ["banana", "Orange", "Kiwi", "cherry"]
 thislist.reverse()
 print(thislist)
+
+Copiar uma lista
+Você não pode copiar uma lista simplesmente digitando list2 = list1, porque: list2será apenas uma
+ referência a list1, e as alterações feitas list1automaticamente também serão feitas em list2.
+
+Existem maneiras de fazer uma cópia, uma delas é usar o método List interno copy().
+
+Exemplo
+Faça uma cópia de uma lista com o copy()método:
+
+thislist = ["apple", "banana", "cherry"]
+mylist = thislist.copy()
+print(mylist)
+
+Outra maneira de fazer uma cópia é usar o método interno list().
+
+Exemplo
+Faça uma cópia de uma lista com o list()método:
+
+thislist = ["apple", "banana", "cherry"]
+mylist = list(thislist)
+print(mylist)
+
+Junte-se a duas listas
+Existem várias maneiras de unir ou concatenar duas ou mais listas em Python.
+
+Uma das maneiras mais fáceis é usando o + operador.
+
+Exemplo
+Junte-se a duas listas:
+
+list1 = ["a", "b", "c"]
+list2 = [1, 2, 3]
+
+list3 = list1 + list2
+print(list3)
+Outra maneira de juntar duas listas é anexando todos os itens da lista2 na lista1, um por um:
+
+Exemplo
+Anexar list2 em list1:
+
+list1 = ["a", "b" , "c"]
+list2 = [1, 2, 3]
+
+for x in list2:
+  list1.append(x)
+
+print(list1)
+Ou você pode usar o extend() método, cuja finalidade é adicionar elementos de uma lista para outra lista:
+
+Exemplo
+Use o extend()método para adicionar list2 no final de list1:
+
+list1 = ["a", "b" , "c"]
+list2 = [1, 2, 3]
+
+list1.extend(list2)
+print(list1)
+
+Listar métodos
+Python tem um conjunto de métodos integrados que você pode usar em listas.
+
+Method     Description
+append()   Adds an element at the end of the list
+clear()    Removes all the elements from the list
+copy()     Returns a copy of the list
+count()    Returns the number of elements with the specified value
+extend()   Add the elements of a list (or any iterable), to the end of the current list
+index()    Returns the index of the first element with the specified value
+insert()   Adds an element at the specified position
+pop()      Removes the element at the specified position
+remove()   Removes the item with the specified value
+reverse()  Reverses the order of the list
+sort()     Sorts the list
+
+Tuplas Python
+
+mytuple = ("apple", "banana", "cherry")
+
+Tupla
+Tuplas são usadas para armazenar vários itens em uma única variável.
+
+Tuple é um dos 4 tipos de dados internos do Python usados para armazenar 
+coleções de dados, os outros 3 são List , Set e Dictionary , todos com qualidades e usos diferentes.
+
+Uma tupla é uma coleção ordenada e imutável .
+
+Tuplas são escritas com colchetes.
+
+Exemplo
+Crie uma Tupla:
+
+thistuple = ("apple", "banana", "cherry")
+print(thistuple)
+
+Itens de Tupla
+Os itens de tupla são ordenados, imutáveis e permitem valores duplicados.
+
+Os itens de tupla são indexados, o primeiro item possui índice [0], o segundo item possui índice [1]etc.
+
+Encomendado
+Quando dizemos que as tuplas estão ordenadas, significa que os itens têm uma ordem definida, e essa ordem 
+não será alterada.
+
+Imutável
+As tuplas são imutáveis, o que significa que não podemos alterar, adicionar ou remover itens após a criação da tupla.
+
+Permitir duplicatas
+Como as tuplas são indexadas, elas podem ter itens com o mesmo valor:
+
+Exemplo
+Tuplas permitem valores duplicados:
+
+thistuple = ("apple", "banana", "cherry", "apple", "cherry")
+print(thistuple)
+
+
+Comprimento da Tupla
+Para determinar quantos itens uma tupla possui, use a len()função:
+
+Exemplo
+Imprima o número de itens na tupla:
+
+thistuple = ("apple", "banana", "cherry")
+print(len(thistuple))
+
+Criar Tupla Com Um Item
+Para criar uma tupla com apenas um item, você deve adicionar uma vírgula após o item, caso contrário, 
+o Python não o reconhecerá como uma tupla.
+
+Exemplo
+Uma tupla de item, lembre-se da vírgula:
+
+thistuple = ("apple",)
+print(type(thistuple))
+
+#NOT a tuple
+
+thistuple = ("apple")
+print(type(thistuple))
+
+Itens de Tupla - Tipos de Dados
+Os itens de tupla podem ser de qualquer tipo de dados:
+
+Exemplo
+Tipos de dados String, int e boolean:
+
+tuple1 = ("apple", "banana", "cherry")
+tuple2 = (1, 5, 7, 9, 3)
+tuple3 = (True, False, False)
+
+Uma tupla pode conter diferentes tipos de dados:
+
+Exemplo
+Uma tupla com strings, inteiros e valores booleanos:
+
+tuple1 = ("abc", 34, True, 40, "male")
+tipo()
+
+Da perspectiva do Python, as tuplas são definidas como objetos com o tipo de dados 'tupla':
+
+<class 'tuple'>
+Exemplo
+Qual é o tipo de dados de uma tupla?
+
+mytuple = ("apple", "banana", "cherry")
+print(type(mytuple))
+O construtor tupla()
+
+Também é possível usar o construtor tuple() para fazer uma tupla.
+
+Exemplo
+Usando o método tuple() para fazer uma tupla:
+
+thistuple = tuple(("apple", "banana", "cherry")) # note the double round-brackets
+print(thistuple)
+
+Coleções Python (matrizes)
+Existem quatro tipos de dados de coleção na linguagem de programação Python:
+
+Lista      é uma coleção que é ordenada e mutável. Permite membros duplicados.
+Tupla      é uma coleção ordenada e imutável. Permite membros duplicados.
+Set        é uma coleção não ordenada, imutável* e não indexada. Nenhum membro duplicado.
+Dicionário é uma coleção ordenada** e mutável. Nenhum membro duplicado.
+
+*Os itens do conjunto são imutáveis, mas você pode remover e/ou adicionar itens sempre que quiser.
+
+**A partir da versão 3.7 do Python, os dicionários são ordenados . No Python 3.6 e anteriores,
+ os dicionários não são ordenados .
+
+Ao escolher um tipo de coleção, é útil entender as propriedades desse tipo. Escolher o tipo certo para
+um determinado conjunto de dados pode significar retenção de significado e pode significar um aumento na
+eficiência ou segurança.
+
 
 
 
