@@ -1888,6 +1888,190 @@ Ao escolher um tipo de coleção, é útil entender as propriedades desse tipo. 
 um determinado conjunto de dados pode significar retenção de significado e pode significar um aumento na
 eficiência ou segurança.
 
+Acessar itens de tupla
+
+Você pode acessar os itens da tupla consultando o número do índice, entre colchetes:
+
+Exemplo
+Imprima o segundo item na tupla:
+
+thistuple = ("apple", "banana", "cherry")
+print(thistuple[1])
+
+Nota: O primeiro item tem índice 0.
+
+Indexação negativa
+Indexação negativa significa começar do fim.
+
+-1refere-se ao último item, -2refere-se ao penúltimo item etc.
+
+Exemplo
+Imprima o último item da tupla:
+
+thistuple = ("apple", "banana", "cherry")
+print(thistuple[-1])
+
+Faixa de índices
+Você pode especificar um intervalo de índices especificando onde começar e onde terminar o intervalo.
+
+Ao especificar um intervalo, o valor de retorno será uma nova tupla com os itens especificados.
+
+Exemplo
+Retorne o terceiro, quarto e quinto item:
+
+thistuple = ("apple", "banana", "cherry", "orange", "kiwi", "melon", "mango")
+print(thistuple[2:5])
+
+Nota: A pesquisa começará no índice 2 (incluído) e terminará no índice 5 (não incluído).
+
+Lembre-se que o primeiro item tem índice 0.
+
+Ao deixar de fora o valor inicial, o intervalo começará no primeiro item:
+
+Exemplo
+Este exemplo retorna os itens do início para, mas NÃO inclui, "kiwi":
+
+thistuple = ("apple", "banana", "cherry", "orange", "kiwi", "melon", "mango")
+print(thistuple[:4])
+
+Ao deixar de fora o valor final, o intervalo irá para o final da lista:
+
+Exemplo
+Este exemplo retorna os itens de "cherry" e até o final:
+
+thistuple = ("apple", "banana", "cherry", "orange", "kiwi", "melon", "mango")
+print(thistuple[2:])
+
+As tuplas são imutáveis, o que significa que você não pode alterar, adicionar ou remover itens depois 
+que a tupla for criada.
+
+Mas existem algumas soluções alternativas.
+
+Valores mudança Tuple
+Depois que uma tupla é criada, você não pode alterar seus valores. Tuplas são imutáveis , ou imutáveis ,
+como também é chamado.
+
+Mas há uma solução alternativa. Você pode converter a tupla em uma lista, alterar a lista e convertê-la 
+novamente em uma tupla.
+
+Exemplo
+Converta a tupla em uma lista para poder alterá-la:
+
+x = ("apple", "banana", "cherry")
+y = list(x)
+y[1] = "kiwi"
+x = tuple(y)
+
+print(x)
+
+Adicionar itens
+Como as tuplas são imutáveis, elas não possuem um append()método embutido, mas existem outras maneiras de
+ adicionar itens a uma tupla.
+
+1. Converter em uma lista : Assim como a solução alternativa para alterar uma tupla, você pode convertê-la 
+em uma lista, adicionar seu(s) item(ns) e convertê-la novamente em uma tupla.
+
+Exemplo
+Converter a tupla em uma lista, adicione "laranja", e convertê-lo de volta em uma tupla:
+
+thistuple = ("apple", "banana", "cherry")
+y = list(thistuple)
+y.append("orange")
+thistuple = tuple(y)
+
+2. Adicionar tupla a uma tupla . Você tem permissão para adicionar tuplas a tuplas, portanto, se você quiser 
+adicionar um item (ou muitos), crie uma nova tupla com o(s) item(ns) e adicione-a à tupla existente:
+
+Exemplo
+Crie uma nova tupla com o valor "laranja" e adicione essa tupla:
+
+thistuple = ("apple", "banana", "cherry")
+y = ("orange",)
+thistuple += y
+
+print(thistuple)
+
+Nota: Ao criar uma tupla com apenas um item, lembre-se de incluir uma vírgula após o item, caso contrário ele
+ não será identificado como uma tupla.
+
+
+Remover itens
+Nota: Você não pode remover itens em uma tupla.
+
+As tuplas não podem ser alteradas , portanto, você não pode remover itens dela, mas pode usar a mesma solução 
+alternativa que usamos para alterar e adicionar itens de tupla:
+
+Exemplo
+Converter a tupla em uma lista, remova "maçã", e convertê-lo de volta em uma tupla:
+
+thistuple = ("apple", "banana", "cherry")
+y = list(thistuple)
+y.remove("apple")
+thistuple = tuple(y)
+
+Ou você pode excluir a tupla completamente:
+
+Exemplo
+A delpalavra-chave pode excluir a tupla completamente:
+
+thistuple = ("apple", "banana", "cherry")
+del thistuple
+print(thistuple) #this will raise an error because the tuple no longer exists
+
+Descompactando uma Tupla
+
+Quando criamos uma tupla, normalmente atribuímos valores a ela. Isso é chamado de "empacotar" uma tupla:
+
+Exemplo
+Empacotando uma tupla:
+
+fruits = ("apple", "banana", "cherry")
+Mas, em Python, também podemos extrair os valores de volta para as variáveis. Isso é chamado de "descompactar":
+
+Exemplo
+Descompactando uma tupla:
+
+fruits = ("apple", "banana", "cherry")
+
+(green, yellow, red) = fruits
+
+print(green)
+print(yellow)
+print(red)
+
+Nota: O número de variáveis deve corresponder ao número de valores na tupla, caso contrário, você deve usar um 
+asterisco para coletar os valores restantes como uma lista.
+
+
+Usando asterisco*
+Se o número de variáveis for menor que o número de valores, você pode adicionar um * ao nome da variável e os 
+valores serão atribuídos à variável como uma lista:
+
+Exemplo
+Atribua o restante dos valores como uma lista chamada "red":
+
+fruits = ("apple", "banana", "cherry", "strawberry", "raspberry")
+
+(green, yellow, *red) = fruits
+
+print(green)
+print(yellow)
+print(red)
+
+Se o asterisco for adicionado a outro nome de variável que não o último, o Python atribuirá valores à variável
+até que o número de valores restantes corresponda ao número de variáveis restantes.
+
+Exemplo
+Adicione uma lista de valores a variável "tropic":
+
+fruits = ("apple", "mango", "papaya", "pineapple", "cherry")
+
+(green, *tropic, red) = fruits
+
+print(green)
+print(tropic)
+print(red)
+
 
 
 
