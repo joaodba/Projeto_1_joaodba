@@ -2073,6 +2073,547 @@ print(tropic)
 print(red)
 
 
+Percorrer uma Tupla
+
+Você pode percorrer os itens da tupla usando um forloop.
+
+Exemplo
+Iterar pelos itens e imprimir os valores:
+
+thistuple = ("apple", "banana", "cherry")
+for x in thistuple:
+  print(x)
+
+Percorrer os números de índice
+Você também pode percorrer os itens da tupla consultando seu número de índice.
+
+Use as funções range()e len()para criar um iterável adequado.
+
+Exemplo
+Imprima todos os itens consultando seu número de índice:
+
+thistuple = ("apple", "banana", "cherry")
+for i in range(len(thistuple)):
+  print(thistuple[i])
+
+
+Usando um loop while
+Você pode percorrer os itens da lista usando um whileloop.
+
+Use a len()função para determinar o comprimento da tupla, então comece em 0 e faça um loop 
+pelos itens da tupla consultando seus índices.
+
+Lembre-se de aumentar o índice em 1 após cada iteração.
+
+Exemplo
+Imprima todos os itens, usando um whileloop para percorrer todos os números de índice:
+
+thistuple = ("apple", "banana", "cherry")
+i = 0
+while i < len(thistuple):
+  print(thistuple[i])
+  i = i + 1
+
+Junte-se a duas tuplas
+
+Para juntar duas ou mais tuplas você pode usar o + operador:
+
+Exemplo
+Junte duas tuplas:
+
+tuple1 = ("a", "b" , "c")
+tuple2 = (1, 2, 3)
+
+tuple3 = tuple1 + tuple2
+print(tuple3)
+
+Multiplicar Tuplas
+Se você quiser multiplicar o conteúdo de uma tupla um determinado número de vezes, você pode usar o * operador:
+
+Exemplo
+Multiplique a tupla de frutas por 2:
+
+fruits = ("apple", "banana", "cherry")
+mytuple = fruits * 2
+
+print(mytuple)
+
+Métodos de Tupla
+Python tem dois métodos integrados que você pode usar em tuplas.
+
+Method  Description
+count() Returns the number of times a specified value occurs in a tuple
+index() Searches the tuple for a specified value and returns the position of where it was found
+
+Conjuntos Python
+
+myset = {"apple", "banana", "cherry"}
+
+Definir
+Os conjuntos são usados para armazenar vários itens em uma única variável.
+
+Set é um dos 4 tipos de dados internos do Python usados para armazenar coleções de dados, os outros 3 são List ,
+Tuple e Dictionary , todos com qualidades e usos diferentes.
+
+Um conjunto é uma coleção não ordenada , imutável* e não indexada .
+
+* Nota: Os itens definidos não podem ser alterados, mas você pode remover itens e adicionar novos itens.
+
+Os conjuntos são escritos com colchetes.
+
+Exemplo
+Crie um conjunto:
+
+thisset = {"apple", "banana", "cherry"}
+print(thisset)
+Observação: os conjuntos não são ordenados, portanto, você não pode ter certeza em qual ordem os itens aparecerão.
+
+Definir itens
+Os itens do conjunto não são ordenados, não podem ser alterados e não permitem valores duplicados.
+
+Não ordenado
+Não ordenado significa que os itens em um conjunto não têm uma ordem definida.
+
+Os itens do conjunto podem aparecer em uma ordem diferente toda vez que você os usa e não podem ser referenciados
+por índice ou chave.
+
+Imutável
+Os itens do conjunto são imutáveis, o que significa que não podemos alterar os itens após a criação do conjunto.
+
+Depois que um conjunto é criado, você não pode alterar seus itens, mas pode remover itens e adicionar novos itens.
+
+Duplicatas não permitidas
+Os conjuntos não podem ter dois itens com o mesmo valor.
+
+Exemplo
+Valores duplicados serão ignorados:
+
+thisset = {"apple", "banana", "cherry", "apple"}
+
+print(thisset)
+
+
+Obter o comprimento de um conjunto
+Para determinar quantos itens um conjunto possui, use a len() função.
+
+Exemplo
+Obtenha o número de itens em um conjunto:
+
+thisset = {"apple", "banana", "cherry"}
+
+print(len(thisset))
+
+Definir itens - Tipos de dados
+Os itens do conjunto podem ser de qualquer tipo de dados:
+
+Exemplo
+Tipos de dados String, int e boolean:
+
+set1 = {"apple", "banana", "cherry"}
+set2 = {1, 5, 7, 9, 3}
+set3 = {True, False, False}
+Um conjunto pode conter diferentes tipos de dados:
+
+Exemplo
+Um conjunto com strings, inteiros e valores booleanos:
+
+set1 = {"abc", 34, True, 40, "male"}
+tipo()
+Da perspectiva do Python, os conjuntos são definidos como objetos com o tipo de dados 'set':
+
+<class 'set'>
+Exemplo
+Qual é o tipo de dado de um conjunto?
+
+myset = {"apple", "banana", "cherry"}
+print(type(myset))
+O construtor set()
+Também é possível usar o construtor set() para fazer um conjunto.
+
+Exemplo
+Usando o construtor set() para fazer um conjunto:
+
+thisset = set(("apple", "banana", "cherry")) # note the double round-brackets
+print(thisset)
+Coleções Python (matrizes)
+Existem quatro tipos de dados de coleção na linguagem de programação Python:
+
+Lista é uma coleção que é ordenada e mutável. Permite membros duplicados.
+Tupla é uma coleção ordenada e imutável. Permite membros duplicados.
+Set é uma coleção não ordenada, imutável* e não indexada. Nenhum membro duplicado.
+Dicionário é uma coleção ordenada** e mutável. Nenhum membro duplicado.
+*Os itens do conjunto não podem ser alterados, mas você pode remover itens e adicionar novos itens.
+
+**A partir da versão 3.7 do Python, os dicionários são ordenados . No Python 3.6 e anteriores, os 
+dicionários não são ordenados .
+
+Ao escolher um tipo de coleção, é útil entender as propriedades desse tipo. Escolher o tipo certo 
+para um determinado conjunto de dados pode significar retenção de significado e pode significar um 
+aumento na eficiência ou segurança.
+
+
+Acessar itens
+
+Você não pode acessar itens em um conjunto fazendo referência a um índice ou a uma chave.
+
+Mas você pode percorrer os itens do conjunto usando um for loop ou perguntar se um valor 
+especificado está presente em um conjunto, usando a palavra- inchave.
+
+Exemplo
+Percorra o conjunto e imprima os valores:
+
+thisset = {"apple", "banana", "cherry"}
+
+for x in thisset:
+  print(x)
+
+Exemplo
+Verifique se "banana" está presente no conjunto:
+
+thisset = {"apple", "banana", "cherry"}
+
+print("banana" in thisset)
+
+Adicionar itens
+
+Depois que um conjunto é criado, você não pode alterar seus itens, mas pode adicionar novos itens.
+
+Para adicionar um item a um conjunto, use o add() método.
+
+Exemplo
+Adicione um item a um conjunto, usando o add() método:
+
+thisset = {"apple", "banana", "cherry"}
+
+thisset.add("orange")
+
+print(thisset)
+
+Adicionar conjuntos
+Para adicionar itens de outro conjunto ao conjunto atual, use o update() método.
+
+Exemplo
+Adicione elementos de tropicalinto thisset:
+
+thisset = {"apple", "banana", "cherry"}
+tropical = {"pineapple", "mango", "papaya"}
+
+thisset.update(tropical)
+
+print(thisset)
+
+Adicionar qualquer iterável
+O objeto no update()método não precisa ser um conjunto, pode ser qualquer objeto iterável (tuplas, listas, dicionários etc.).
+
+Exemplo
+Adicione elementos de uma lista a at set:
+
+thisset = {"apple", "banana", "cherry"}
+mylist = ["kiwi", "orange"]
+
+thisset.update(mylist)
+
+print(thisset)
+
+
+Remover item
+Para remover um item em um conjunto, use o método remove(), ou .discard()
+
+Exemplo
+Remova "banana" usando o remove() método:
+
+thisset = {"apple", "banana", "cherry"}
+
+thisset.remove("banana")
+
+print(thisset)
+
+Nota: Se o item a ser removido não existir, remove()será gerado um erro.
+
+Exemplo
+Remova "banana" usando o discard() método:
+
+thisset = {"apple", "banana", "cherry"}
+
+thisset.discard("banana")
+
+print(thisset)
+
+Nota: Se o item a ser removido não existir, NÃOdiscard() irá gerar um erro.
+
+Você também pode usar o pop()método para remover um item, mas esse método removerá 
+o último item. Lembre-se de que os conjuntos não são ordenados, então você não saberá qual item será removido.
+
+O valor de retorno do pop()método é o item removido.
+
+Exemplo
+Remova o último item usando o pop() método:
+
+thisset = {"apple", "banana", "cherry"}
+
+x = thisset.pop()
+
+print(x)
+
+print(thisset)
+
+Nota: Os conjuntos não são ordenados , portanto, ao usar o pop()método, você não sabe qual item será removido.
+
+Exemplo
+O clear() método esvazia o conjunto:
+
+thisset = {"apple", "banana", "cherry"}
+
+thisset.clear()
+
+print(thisset)
+
+Exemplo
+A del palavra-chave excluirá o conjunto completamente:
+
+thisset = {"apple", "banana", "cherry"}
+
+del thisset
+
+print(thisset)
+
+Itens de loop
+
+Você pode percorrer os itens definidos usando um for loop:
+
+Exemplo
+Percorra o conjunto e imprima os valores:
+
+thisset = {"apple", "banana", "cherry"}
+
+for x in thisset:
+  print(x)
+
+
+Junte dois conjuntos
+
+Existem várias maneiras de unir dois ou mais conjuntos em Python.
+
+Você pode usar o union()método que retorna um novo conjunto contendo todos os itens de ambos 
+os conjuntos ou o update()método que insere todos os itens de um conjunto em outro:
+
+Exemplo
+O union()método retorna um novo conjunto com todos os itens de ambos os conjuntos:
+
+set1 = {"a", "b" , "c"}
+set2 = {1, 2, 3}
+
+set3 = set1.union(set2)
+print(set3)
+Exemplo
+O update()método insere os itens em set2 em set1:
+
+set1 = {"a", "b" , "c"}
+set2 = {1, 2, 3}
+
+set1.update(set2)
+print(set1)
+Nota: Ambos union()e update() excluirão quaisquer itens duplicados.
+
+PROPAGANDA
+
+Mantenha APENAS as duplicatas
+O intersection_update()método manterá apenas os itens presentes em ambos os conjuntos.
+
+Exemplo
+Mantenha os itens que existem em ambos set x, e set y:
+
+x = {"apple", "banana", "cherry"}
+y = {"google", "microsoft", "apple"}
+
+x.intersection_update(y)
+
+print(x)
+O intersection()método retornará um novo conjunto, que contém apenas os itens presentes em ambos os conjuntos.
+
+Exemplo
+Retorna um set que contém os itens que existem em set xe set y:
+
+x = {"apple", "banana", "cherry"}
+y = {"google", "microsoft", "apple"}
+
+z = x.intersection(y)
+
+print(z)
+Mantenha tudo, mas não as duplicatas
+O symmetric_difference_update()método manterá apenas os elementos que NÃO estão presentes em ambos os conjuntos.
+
+Exemplo
+Guarde os itens que não estão presentes em ambos os conjuntos:
+
+x = {"apple", "banana", "cherry"}
+y = {"google", "microsoft", "apple"}
+
+x.symmetric_difference_update(y)
+
+print(x)
+O symmetric_difference()método retornará um novo conjunto, que contém apenas os elementos que NÃO estão
+ presentes em ambos os conjuntos.
+
+Exemplo
+Retorna um conjunto que contém todos os itens de ambos os conjuntos, exceto os itens presentes em ambos:
+
+x = {"apple", "banana", "cherry"}
+y = {"google", "microsoft", "apple"}
+
+z = x.symmetric_difference(y)
+
+print(z)
+
+Definir métodos
+Python tem um conjunto de métodos integrados que você pode usar em conjuntos.
+
+Method                        Description
+add()                         Adds an element to the set
+clear()                       Removes all the elements from the set
+copy()                        Returns a copy of the set
+difference()                  Returns a set containing the difference between two or more sets
+difference_update()           Removes the items in this set that are also included in another, specified set
+discard()                     Remove the specified item
+intersection()                Returns a set, that is the intersection of two other sets
+intersection_update()         Removes the items in this set that are not present in other, specified set(s)
+isdisjoint()                  Returns whether two sets have a intersection or not
+issubset()                    Returns whether another set contains this set or not
+issuperset()                  Returns whether this set contains another set or not
+pop()                         Removes an element from the set
+remove()                      Removes the specified element
+symmetric_difference()        Returns a set with the symmetric differences of two sets
+symmetric_difference_update() inserts the symmetric differences from this set and another
+union()                       Return a set containing the union of sets
+update()                      Update the set with the union of this set and others
+
+
+Dicionários Python
+
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+
+Dicionário
+
+Os dicionários são usados para armazenar valores de dados em pares chave:valor.
+
+Um dicionário é uma coleção ordenada*, mutável e que não permite duplicatas.
+
+A partir da versão 3.7 do Python, os dicionários são ordenados . No Python 3.6 e anteriores, 
+os dicionários não são ordenados .
+
+Os dicionários são escritos com colchetes e possuem chaves e valores:
+
+Exemplo
+Crie e imprima um dicionário:
+
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+print(thisdict)
+Itens do dicionário
+Os itens do dicionário são ordenados, alteráveis e não permitem duplicatas.
+
+Os itens do dicionário são apresentados em pares chave:valor e podem ser referenciados usando o nome da chave.
+
+Exemplo
+Imprima o valor "marca" do dicionário:
+
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+print(thisdict["brand"])
+
+Ordenado ou Não Ordenado?
+
+A partir da versão 3.7 do Python, os dicionários são ordenados . No Python 3.6 e anteriores, os dicionários não
+são ordenados .
+
+Quando dizemos que os dicionários estão ordenados, significa que os itens têm uma ordem definida, e essa ordem não 
+será alterada.
+
+Não ordenado significa que os itens não têm uma ordem definida, você não pode fazer referência a um item usando um 
+índice.
+
+Mutável
+Os dicionários são mutáveis, o que significa que podemos alterar, adicionar ou remover itens após a criação do
+ dicionário.
+
+Duplicatas não permitidas
+Os dicionários não podem ter dois itens com a mesma chave:
+
+Exemplo
+Valores duplicados substituirão os valores existentes:
+
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964,
+  "year": 2020
+}
+print(thisdict)
+
+
+Tamanho do dicionário
+Para determinar quantos itens um dicionário possui, use a len()função:
+
+Exemplo
+Imprima o número de itens no dicionário:
+
+print(len(thisdict))
+
+Itens do Dicionário - Tipos de Dados
+Os valores nos itens do dicionário podem ser de qualquer tipo de dados:
+
+Exemplo
+Tipos de dados String, int, boolean e list:
+
+thisdict = {
+  "brand": "Ford",
+  "electric": False,
+  "year": 1964,
+  "colors": ["red", "white", "blue"]
+}
+tipo()
+
+Da perspectiva do Python, os dicionários são definidos como objetos com o tipo de dados 'dict':
+
+<class 'dict'>
+
+Exemplo
+Imprima o tipo de dados de um dicionário:
+
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+print(type(thisdict))
+
+Coleções Python (matrizes)
+
+Existem quatro tipos de dados de coleção na linguagem de programação Python:
+
+Lista       é uma coleção que é ordenada e mutável. Permite membros duplicados.
+Tupla       é uma coleção ordenada e imutável. Permite membros duplicados.
+Set         é uma coleção não ordenada, imutável* e não indexada. Nenhum membro duplicado.
+Dicionário  é uma coleção ordenada** e mutável. Nenhum membro duplicado.
+
+*Os itens do conjunto são imutáveis, mas você pode remover e/ou adicionar itens sempre que quiser.
+
+**A partir da versão 3.7 do Python, os dicionários são ordenados . No Python 3.6 e anteriores, os 
+dicionários não são ordenados .
+
+Ao escolher um tipo de coleção, é útil entender as propriedades desse tipo. Escolher o tipo certo 
+para um determinado conjunto de dados pode significar retenção de significado e pode significar um 
+aumento na eficiência ou segurança.
 
 
 
