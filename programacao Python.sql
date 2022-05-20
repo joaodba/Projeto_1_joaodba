@@ -2516,6 +2516,7 @@ thisdict = {
   "year": 1964
 }
 print(thisdict)
+
 Itens do dicionário
 Os itens do dicionário são ordenados, alteráveis e não permitem duplicatas.
 
@@ -2614,6 +2615,190 @@ dicionários não são ordenados .
 Ao escolher um tipo de coleção, é útil entender as propriedades desse tipo. Escolher o tipo certo 
 para um determinado conjunto de dados pode significar retenção de significado e pode significar um 
 aumento na eficiência ou segurança.
+
+
+Acessando itens
+
+Você pode acessar os itens de um dicionário consultando o nome da chave, entre colchetes:
+
+Exemplo
+Obtenha o valor da chave "model":
+
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+x = thisdict["model"]
+
+Existe também um método chamado get()que lhe dará o mesmo resultado:
+
+Exemplo
+Obtenha o valor da chave "model":
+
+x = thisdict.get("model")
+
+Obter chaves
+O keys()método retornará uma lista de todas as chaves do dicionário.
+
+Exemplo
+Obtenha uma lista das chaves:
+
+x = thisdict.keys()
+
+A lista de chaves é uma visualização do dicionário, o que significa que quaisquer 
+alterações feitas no dicionário serão refletidas na lista de chaves.
+
+Exemplo
+Adicione um novo item ao dicionário original e veja se a lista de chaves também é atualizada:
+
+car = {
+"brand": "Ford",
+"model": "Mustang",
+"year": 1964
+}
+
+x = car.keys()
+
+print(x) #before the change
+
+car["color"] = "white"
+
+print(x) #after the change
+
+Obter valores
+O values()método retornará uma lista de todos os valores do dicionário.
+
+Exemplo
+Obtenha uma lista dos valores:
+
+x = thisdict.values()
+A lista de valores é uma visualização do dicionário, o que significa que quaisquer 
+alterações feitas no dicionário serão refletidas na lista de valores.
+
+Exemplo
+Faça uma alteração no dicionário original e veja se a lista de valores também é atualizada:
+
+car = {
+"brand": "Ford",
+"model": "Mustang",
+"year": 1964
+}
+
+x = car.values()
+
+print(x) #before the change
+
+car["year"] = 2020
+
+print(x) #after the change
+
+Exemplo
+Adicione um novo item ao dicionário original e veja se a lista de valores também é atualizada:
+
+car = {
+"brand": "Ford",
+"model": "Mustang",
+"year": 1964
+}
+
+x = car.values()
+
+print(x) #before the change
+
+car["color"] = "red"
+
+print(x) #after the change
+
+Obter itens
+O items()método retornará cada item em um dicionário, como tuplas em uma lista.
+
+Exemplo
+Obter uma lista dos pares chave:valor
+
+x = thisdict.items()
+
+A lista retornada é uma visualização dos itens do dicionário, o que significa que quaisquer alterações
+feitas no dicionário serão refletidas na lista de itens.
+
+Exemplo
+Faça uma alteração no dicionário original e veja se a lista de itens também é atualizada:
+
+car = {
+"brand": "Ford",
+"model": "Mustang",
+"year": 1964
+}
+
+x = car.items()
+
+print(x) #before the change
+
+car["year"] = 2020
+
+print(x) #after the change
+
+Exemplo
+Adicione um novo item ao dicionário original e veja se a lista de itens também é atualizada:
+
+car = {
+"brand": "Ford",
+"model": "Mustang",
+"year": 1964
+}
+
+x = car.items()
+
+print(x) #before the change
+
+car["color"] = "red"
+
+print(x) #after the change
+
+Verifique se a chave existe
+Para determinar se uma chave especificada está presente em um dicionário, use a inpalavra-chave:
+
+Exemplo
+Verifique se "modelo" está presente no dicionário:
+
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+if "model" in thisdict:
+  print("Yes, 'model' is one of the keys in the thisdict dictionary")
+
+
+Mudar valores
+
+Você pode alterar o valor de um item específico consultando seu nome de chave:
+
+Exemplo
+Altere o "ano" para 2018:
+
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+thisdict["year"] = 2018
+
+Atualizar dicionário
+O update()método atualizará o dicionário com os itens do argumento fornecido.
+
+O argumento deve ser um dicionário ou um objeto iterável com pares chave:valor.
+
+Exemplo
+Atualize o "ano" do carro usando o update() método:
+
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+thisdict.update({"year": 2020})
+
 
 
 
