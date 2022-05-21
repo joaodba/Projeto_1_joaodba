@@ -296,28 +296,26 @@ SELECT column1, column2, ...
 FROM table_name
 WHERE columnN LIKE condição 1 OR condição 2
 --procura clientes com o nome começando com 'F'
-SELECT * FROM Customers
-WHERE CustomerName LIKE 'F%';
+SELECT * FROM cadastros
+WHERE CustomerName LIKE 'B%';
 --procura clientes com o nome terminando com 'F'
-SELECT * FROM Customers
-WHERE CustomerName LIKE '%F';
+SELECT * FROM cadastros
+WHERE CustomerName LIKE '%e';
 --procura clientes que possuam 'ei' em qual quer posição
-SELECT * FROM Customers
-WHERE CustomerName LIKE '%ei%';
+SELECT * FROM cadastros
+WHERE CustomerName LIKE '%sc%';
 --procura clientes que possuem 'u' na 3º posição, '_' = um caracter
-SELECT * FROM Customers
+SELECT * FROM cadastros
 WHERE CustomerName LIKE '__u%';
 --procura cliente que começar com 'a' e termina com 'o'
-SELECT * FROM Customers
-WHERE ContactName LIKE 'a%o';
+SELECT * FROM cadastros
+WHERE ContactName LIKE 'a%t';
 --procura cliente que NÃO POSSUI 'a'
-SELECT * FROM Customers
+SELECT * FROM cadastros
 WHERE CustomerName NOT LIKE 'a%';
 --seleciona todos que iniciam com b,c, ou d
-SELECT * FROM Customers
+SELECT * FROM cadastros
 WHERE City LIKE '[bcd]%';
-```
-
 
 
 ##IN ( EM ) = Usado como uma condição para uma valor que está 'em' um determinado campo
@@ -1118,7 +1116,7 @@ Script:
 SELECT COUNT Country
 FROM Cadastros
 GROUP BY Country
-HAVING COUNT Country > 3;
+HAVING COUNT Country > 5;
 
 
 
@@ -1425,4 +1423,364 @@ IF (@Resto = 0)
   EXEC sp_decisao2 9;
 
 
+
+-- junção das tabelas
+
+select * from venda
+select * from cliente
+
+--consultar as duplicatas referente as tabelas venda e cliente
+select venda.DUPLIC, cliente.NOME from cliente, venda
+where cliente.CODCLI = venda.CODCLI;
+
+-- ordenar por nome a consulta das tabelas venda e cliente
+select venda.DUPLIC, cliente.NOME from cliente, venda
+where cliente.CODCLI = venda.CODCLI order by cliente.NOME;
+
+-- inserindo mais dados para exemplificar a junção
+insert into venda values ('235100',1500.00,'06/12/2015','500');
+insert into venda values ('203052',9008.33,'22/08/2015','550');
+insert into venda values ('922452',1211.98,'09/03/2016','340');
+insert into venda values ('999820',3110.22,'05/11/2015','170');
+insert into venda values ('223345',2112.11,'08/03/2016','230');
+insert into venda values ('222228',2390.00,'10/07/2016','170');
+insert into venda values ('111211',3535.00,'15/11/2016','230');
+insert into venda values ('907754',2056.90,'30/10/2015','340');
+insert into venda values ('347711',5092.55,'20/11/2016','170');
+insert into venda values ('209967',9008.33,'10/05/2016','550');
+
+
+SELECT * FROM cliente
+SELECT * FROM venda
+
+-- Consulta que mostra código, o nome a quantidade de titulos e o total da dívida de cada cliente.
+select cliente.NOME, count(*) AS titulos, SUM(venda.VALOR) AS TOTAL
+FROM cliente, venda where cliente.codcli = venda.codcli
+group by cliente.nome;
+
+-- Consulta numeros de titulos vencidos agrupados e ordenados pelo nome da tabela cliente
+select cliente.NOME AS CLIENTE, COUNT(*) AS VENCIDOS
+FROM cliente, venda where cliente.codcli = venda.codcli
+AND VENCTO <='2003-12-31' group by cliente.nome ORDER BY cliente.NOME;
+
+-- Consulta de duplicata em atrazo anterior a data 31/12/1999,
+-- apresentando nome do cliente o valor da duplicata e dos juros
+select cliente.NOME, venda.VALOR, venda.VALOR * 0.10 AS JUROS, venda.VALOR * 1.10 AS TOTAL
+FROM cliente, venda where cliente.codcli = venda.codcli
+AND VENCTO <='1999-12-31' ORDER BY cliente.NOME;
+
+select cliente.NOME,VENDA.DUPLIC, venda.VALOR, venda.VALOR * 0.10 AS JUROS, venda.VALOR * 1.10 AS TOTAL
+FROM cliente, venda where cliente.codcli = venda.codcli
+ORDER BY cliente.NOME;
+
+select * from cadfun
+
+-- Visualização de Dados
+-- Cria uma tabela virtual a partir dos dados da tabela cadfun
+
+create view visao1 AS SELECT NOME,DEPTO,SALARIO FROM cadfun;
+
+select * from visao1
+
+-- Visão definida para apresentar os títulos em atraso a partir de 31/12/2005.
+
+create view visao2 AS SELECT cliente.NOME AS CLIENTE,
+COUNT(*) AS VENCIDOS FROM CLIENTE, VENDA WHERE cliente.CODCLI = venda.CODCLI
+AND VENCTO <='2005-12-31' GROUP BY cliente.NOME;
+
+SELECT * FROM visao2
+
+-- Visão3 combinação completa de todos os dados das tabelas cliente e venda.
+
+create view visao3 AS SELECT cliente.CODCLI, cliente.NOME, venda.DUPLIC,
+venda.VALOR,venda.VENCTO FROM cliente, venda WHERE cliente.CODCLI = venda.CODCLI
+
+SELECT * FROM visao3
+
+--Indexação de Tabelas
+
+create index indice1 on cadfun (nome);
+
+alter table cadfun add CPF char(11);
+
+update cadfun set CPF = '10020011199' WHERE CODFUN = 1;
+update cadfun set CPF = '10020022299' WHERE CODFUN = 6;
+update cadfun set CPF = '10020033399' WHERE CODFUN = 8;
+update cadfun set CPF = '10020044499' WHERE CODFUN = 10;
+update cadfun set CPF = '10020055599' WHERE CODFUN = 11;
+update cadfun set CPF = '10020066699' WHERE CODFUN = 12;
+update cadfun set CPF = '10020077799' WHERE CODFUN = 20;
+update cadfun set CPF = '10020088899' WHERE CODFUN = 21;
+update cadfun set CPF = '10022211199' WHERE CODFUN = 22;
+update cadfun set CPF = '10022233399' WHERE CODFUN = 24;
+
+
+
+create database curso;
+
+-- Chave, relacionamento e cardialidade
+-- Criar as tabelas cadpro e caddis
+
+create table cadpro (
+  CODPRO    INT     NOT NULL PRIMARY KEY,
+  NUMEROPRO VARCHAR(40) NOT NULL,
+  CPF     CHAR (11) NOT NULL UNIQUE,
+);
+
+create table caddis (
+  CODDIS    CHAR(6)     NOT NULL,
+  NUMEDIS VARCHAR(40) NOT NULL,
+  CODPROF   INT     NOT NULL FOREIGN KEY REFERENCES cadpro(CODPRO)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION
+);
+-- Inserindo dados na tabela cadpro
+INSERT INTO cadpro VALUES(100,'SILVANA SOUZA','11122233399');
+INSERT INTO cadpro VALUES(120,'RENATO DE ABREU','11122244477');
+INSERT INTO cadpro VALUES(110,'JOSE PAULO SILVA','11122244488');
+INSERT INTO cadpro VALUES(130,'PENELOPE DA SILVA','11122255566');
+INSERT INTO cadpro VALUES(140,'JULIANA DE ALBUQUERQUE','11122266655');
+INSERT INTO cadpro VALUES(150,'CARLOS MUNHOZ DA SILVA','11122277744');
+
+--Inserindo dados na tabela caddis
+INSERT INTO caddis VALUES ('CG-100','MATEMATICA',100);
+INSERT INTO caddis VALUES ('CG-200','PORTUGUES',110);
+INSERT INTO caddis VALUES ('TI-100','ALGORITMOS',120);
+INSERT INTO caddis VALUES ('TI-205','LINGUAGEM DE PROGRAMAÇAO II',130);
+INSERT INTO caddis VALUES ('TI-400','SISTEMAS OPERACIONAIS',140);
+INSERT INTO caddis VALUES ('CG-110','FISICA',100);
+INSERT INTO caddis VALUES ('CG-300','FILOSOFIA',110);
+INSERT INTO caddis VALUES ('TI-200','LINGUAGEM DE PROGRAMACAO I',120);
+INSERT INTO caddis VALUES ('TI-300','BANCO DE DADOS',130);
+INSERT INTO caddis VALUES ('TI-500','PROGRAMACAO WEB',140);
+INSERT INTO caddis VALUES ('CG-100','MATEMÁTICA',150);
+INSERT INTO caddis VALUES ('CG-300','FILOSOFIA',150);
+
+
+use curso
+
+SELECT * FROM caddis;
+SELECT * FROM cadpro;
+
+-- Consulta apresentara a relação de disciplina ofertadas e os professores que as ministram
+SELECT caddis.CODDIS, caddis.NUMEDIS, cadpro.NOMEPRO
+FROM caddis, cadpro WHERE caddis.CODPROF = cadpro.CODPROP;
+
+-- Procedimentos Armazenados
+create procedure sp_saudacao AS
+DECLARE @Mensagem CHAR(11)
+SET @Mensagem = 'Alo Mundo'
+PRINT @Mensagem
+
+-- Execute o comando abaixo
+exec sp_saudacao;
+
+-- Outro exemplo
+create procedure sp_dados AS
+SELECT NOME, SALARIO FROM cadfun
+--Execute o comando abaixo
+exec sp_dados
+
+
+create procedure sp_decisao2 @valor INT AS
+DECLARE @Resto INTEGER
+DECLARE @Mensagem1 VARCHAR(50)
+DECLARE @Mensagem2 VARCHAR(50)
+SET @Resto = @valor % 3
+SET @Mensagem1 = 'e um valor divisivel por 3'
+SET @Mensagem2 = 'nao e um valor divisivel por 3'
+IF (@Resto = 0)
+  BEGIN
+    PRINT @Valor
+    PRINT @Mensagem1
+      END
+      ELSE
+        BEGIN
+          PRINT @Valor
+          PRINT @Mensagem2
+        END
+        ;
+
+  EXEC sp_decisao2 4;
+  EXEC sp_decisao2 9;
+
+  -- Teste de programaçao
+
+select * from venda
+select * from cliente
+
+select cliente.nome, count(*) as total from cliente,venda
+where cliente.CODCLI = venda.CODCLI
+group by cliente.NOME order by cliente.NOME asc;
+
+select cliente.nome, count(*) as TITULOS, sum(venda.valor) as TOTAL from cliente, venda
+where cliente.CODCLI = venda.CODCLI
+group by cliente.NOME;
+
+use virtualdc
+
+select cliente.NOME as cliente, count(*) as vencidos from cliente,venda
+where cliente.CODCLI = venda.CODCLI and VENCTO <= '2003-12-31'
+group by cliente.NOME order by cliente.NOME;
+
+select cliente.NOME, venda.VALOR, venda.VALOR * 0.10 as JUROS,
+venda.VALOR *1.10 as TOTAL, VENCTO, DUPLIC,CIDADE from cliente, venda where cliente.CODCLI = venda.CODCLI
+and VENCTO <='1999-12-31' order by cliente.NOME
+
+--Visualização de dados
+CREATE VIEW visao1 as Select NOME, DEPTO, SALARIO from cadfun;
+
+select * from visao1
+
+create view visao2 as Select cliente.NOME as cliente, count(*) as VENCIDOS
+FROM cliente, venda WHERE cliente.CODCLI = venda.CODCLI
+AND VENCTO <= '2005-12-31' GROUP BY cliente.NOME
+
+select * from visao2
+
+create view visao3 as Select cliente.CODCLI, cliente.NOME, venda.DUPLIC,
+venda.VALOR,venda.VENCTO from cliente, venda where cliente.CODCLI=venda.CODCLI
+
+select * from visao3
+
+select * from caddis;
+select * from cadpro;
+
+Select caddis.CODDIS, caddis.NUMEDIS, cadpro.NOMEPRO from caddis, cadpro
+where caddis.CODPROF = cadpro.CODPROP order by NOMEPRO;
+
+-- Sub-Rotinas
+
+use virtualdc
+
+create procedure sp_saudacao as 
+Declare @Mensagem char(20)
+Set @Mensagem = 'Alô, Mundo'
+Print @Mensagem
+
+exec sp_saudacao;
+
+Create procedure teste as
+Declare @Mensagem char (25)
+Set @Mensagem = 'Vamos Focar no Estudo'
+Print @Mensagem
+
+-- Dois paramêtro de entrada e um parâmetro de saida
+CREATE PROCEDURE sp_calculo @A INT, @B INT, @S INT OUTPUT AS SET @S = @A + @B
+DECLARE @SAIDA INT;
+EXEC sp_calculo 5, 8, @saida output;
+PRINT @SAIDA;
+
+-- Recebe dois valores reais com os parâmetros e apresenta o resultado da adição dos valores
+-- caso a soma seja maior ou igual a 10. Caso não seja satisfeita não apresenta nada
+
+Create Procedure sp_decisao1 @A FLOAT, @B FLOAT AS
+DECLARE @X FLOAT
+SET @X = @A + @B
+IF (@X >= 10)
+PRINT @X
+
+EXEC sp_decisao1 4.4,5.5;
+EXEC sp_decisao1 5.0, 6.0;
+
+-- Recebe a entrada de um parâmetro numérico inteiro e exibe uma mensagem informando se o
+-- numero é ou não divisível por 3.
+
+Create Procedure sp_decisao2 @valor INT AS
+DECLARE @Resto INTEGER
+DECLARE @Mensagem1 VARCHAR(50)
+DECLARE @Mensagem2 VARCHAR(50)
+SET @Resto = @valor % 3
+SET @Mensagem1 = 'é um valor divisivel por 3'
+SET @Mensagem2 = 'não é um valor divisivel por 3'
+IF (@Resto = 0)
+BEGIN
+PRINT @Valor
+PRINT @Mensagem1
+END
+ELSE
+BEGIN
+PRINT @Valor
+PRINT @Mensagem2
+
+EXEC sp_decisao2 4;
+EXEC sp_decisao2 9;
+
+
+Use virtualdc
+-- Mostra o valor Fatorial de um numero inteiro qualquer usando o comando WHILE (LAÇO)
+Create Procedure sp_fat @valor INT AS
+Declare @Fator INT, @I INT
+SET @Fator = 1
+SET @I = 1
+WHILE (@I <= @valor)
+begin
+set @Fator = @Fator * @I
+set @I = @I + 1
+END
+PRINT @Fator
+
+exec sp_fat 5;
+exec sp_fat 6;
+
+SELECT * FROM morto;
+SELECT * FROM cadfun;
+-- Insere o registro no arquivo morto e deleta o registro inserido da tabela cadfun
+Create Procedure sp_demite @codigo int as
+insert into morto
+select codfun, nome, depto, funcao, salario, admissao, filhos, cpf from cadfun
+where CODFUN = @codigo
+delete from cadfun where CODFUN=@codigo
+
+exec sp_demite 23;
+
+use virtualdc;
+-- Gatilhos ou Disparadores
+CREATE TABLE auditoria (
+  USUARIO VARCHAR(40),
+  ACAO    VARCHAR(9),
+  DATA    DATE,
+  CODIGO  INT
+  );
+
+-- Gatilho para Inserir dados na tabela cadfun
+CREATE TRIGGER tr_auditor1 ON cadfun FOR INSERT AS
+INSERT INTO auditoria SELECT
+SUSER_SNAME(),
+'Cadastrou',
+GETDATE(),
+CODFUN
+FROM inserted;
+
+-- Vamos inserir um registro.
+
+INSERT INTO cadfun VALUES (60, 'MARINALVA DA SILVA','3','PROGRAMADOR', 1200.00,'19/10/2016',0,
+'50022255599');
+
+SELECT * FROM cadfun;
+SELECT * FROM auditoria;
+
+CREATE TRIGGER tr_auditor2 ON cadfun FOR UPDATE AS
+INSERT INTO auditoria SELECT
+SUSER_SNAME(),
+'Alterou',
+GETDATE(),
+CODFUN
+FROM inserted;
+
+---- Fazer uma alteração no Registro do funcionarios antonio
+
+UPDATE cadfun SET FUNCAO = 'SUPERINTENDENTE'
+WHERE NOME = 'ANTONIO DA SILVA';
+
+UPDATE cadfun SET SALARIO = SALARIO * 1.05;
+
+SELECT * FROM auditoria;
+-- Alterar o codigo do funcionario Antonio dos santos
+UPDATE cadfun SET CODFUN = 13 WHERE CODFUN = 12;
+
+
+SELECT * FROM auditoria;
+
+pausa da apostila de SQL
 
