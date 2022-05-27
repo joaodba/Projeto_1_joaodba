@@ -2799,7 +2799,228 @@ thisdict = {
 }
 thisdict.update({"year": 2020})
 
+Adicionando itens
 
+A adição de um item ao dicionário é feita usando uma nova chave de índice e atribuindo um valor a ela:
+
+Exemplo
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+thisdict["color"] = "red"
+print(thisdict)
+
+Atualizar dicionário
+
+O update()método atualizará o dicionário com os itens de um determinado argumento. Se o item não existir,
+ o item será adicionado.
+
+O argumento deve ser um dicionário ou um objeto iterável com pares chave:valor.
+
+Exemplo
+Adicione um item de cor ao dicionário usando o update() método:
+
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+thisdict.update({"color": "red"})
+
+Removendo itens
+
+Existem vários métodos para remover itens de um dicionário:
+
+Exemplo
+O pop()método remove o item com o nome de chave especificado:
+
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+thisdict.pop("model")
+print(thisdict)
+
+Exemplo
+O popitem()método remove o último item inserido (nas versões anteriores à 3.7, 
+um item aleatório é removido):
+
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+thisdict.popitem()
+print(thisdict)
+
+Exemplo
+A delpalavra-chave remove o item com o nome de chave especificado:
+
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+del thisdict["model"]
+print(thisdict)
+
+Exemplo
+A del palavra-chave também pode excluir completamente o dicionário:
+
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+del thisdict
+print(thisdict) #this will cause an error because "thisdict" no longer exists.
+
+Exemplo
+
+O clear()método esvazia o dicionário:
+
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+thisdict.clear()
+print(thisdict)
+
+Percorrer um dicionário
+
+Você pode percorrer um dicionário usando um forloop.
+
+Ao percorrer um dicionário, o valor de retorno são as chaves do dicionário, mas também 
+existem métodos para retornar os valores .
+
+Exemplo
+Imprima todos os nomes de chave no dicionário, um por um:
+
+for x in thisdict:
+  print(x)
+
+Exemplo
+Imprima todos os valores no dicionário, um por um:
+
+for x in thisdict:
+  print(thisdict[x])
+
+Exemplo
+Você também pode usar o values()método para retornar valores de um dicionário:
+
+for x in thisdict.values():
+  print(x)
+
+Exemplo
+Você pode usar o keys()método para retornar as chaves de um dicionário:
+
+for x in thisdict.keys():
+  print(x)
+
+Exemplo
+Faça um loop pelas chaves e valores , usando o items()método:
+
+for x, y in thisdict.items():
+  print(x, y)
+
+
+Copiar um dicionário
+
+Você não pode copiar um dicionário simplesmente digitando dict2 = dict1, porque: dict2será
+ apenas uma referência a dict1, e as alterações feitas em dict1serão feitas automaticamente também em dict2.
+
+Existem maneiras de fazer uma cópia, uma delas é usar o método interno do Dicionário copy().
+
+Exemplo
+Faça uma cópia de um dicionário com o copy()método:
+
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+mydict = thisdict.copy()
+print(mydict)
+
+Outra maneira de fazer uma cópia é usar a função interna dict().
+
+Exemplo
+Faça uma cópia de um dicionário com a dict() função:
+
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+mydict = dict(thisdict)
+print(mydict)
+
+Dicionários aninhados
+
+Um dicionário pode conter dicionários, isso é chamado de dicionários aninhados.
+
+Exemplo
+Crie um dicionário que contenha três dicionários:
+
+myfamily = {
+  "child1" : {
+    "name" : "Emil",
+    "year" : 2004
+  },
+  "child2" : {
+    "name" : "Tobias",
+    "year" : 2007
+  },
+  "child3" : {
+    "name" : "Linus",
+    "year" : 2011
+  }
+}
+Ou, se você quiser adicionar três dicionários em um novo dicionário:
+
+Exemplo
+Crie três dicionários e, em seguida, crie um dicionário que conterá os outros três dicionários:
+
+child1 = {
+  "name" : "Emil",
+  "year" : 2004
+}
+child2 = {
+  "name" : "Tobias",
+  "year" : 2007
+}
+child3 = {
+  "name" : "Linus",
+  "year" : 2011
+}
+
+myfamily = {
+  "child1" : child1,
+  "child2" : child2,
+  "child3" : child3
+}
+
+
+Métodos de dicionário
+Python tem um conjunto de métodos integrados que você pode usar em dicionários.
+
+Method        Description
+clear()       Removes all the elements from the dictionary
+copy()        Returns a copy of the dictionary
+fromkeys()    Returns a dictionary with the specified keys and value
+get()         Returns the value of the specified key
+items()       Returns a list containing a tuple for each key value pair
+keys()        Returns a list containing the dictionary's keys
+pop()         Removes the element with the specified key
+popitem()     Removes the last inserted key-value pair
+setdefault()  Returns the value of the specified key. If the key does not exist: insert the key,
+              with the specified value
+update()      Updates the dictionary with the specified key-value pairs
+values()      Returns a list of all the values in the dictionary
 
 
 
