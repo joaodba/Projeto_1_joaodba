@@ -1,0 +1,133 @@
+[33maf12c47[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m HEAD@{0}: checkout: moving from staging to master
+[33m29c0dce[m[33m ([m[1;31morigin/staging[m[33m, [m[1;32mstaging[m[33m)[m HEAD@{1}: checkout: moving from master to staging
+[33maf12c47[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m HEAD@{2}: checkout: moving from staging to master
+[33m29c0dce[m[33m ([m[1;31morigin/staging[m[33m, [m[1;32mstaging[m[33m)[m HEAD@{3}: commit: Programação Python - Método de Dicionario
+[33m0629a46[m HEAD@{4}: checkout: moving from master to staging
+[33maf12c47[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m HEAD@{5}: checkout: moving from staging to master
+[33m0629a46[m HEAD@{6}: checkout: moving from master to staging
+[33maf12c47[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m HEAD@{7}: checkout: moving from staging to master
+[33m0629a46[m HEAD@{8}: checkout: moving from master to staging
+[33maf12c47[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m HEAD@{9}: checkout: moving from staging to master
+[33m0629a46[m HEAD@{10}: checkout: moving from master to staging
+[33maf12c47[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m HEAD@{11}: checkout: moving from staging to master
+[33m0629a46[m HEAD@{12}: checkout: moving from master to staging
+[33maf12c47[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m HEAD@{13}: checkout: moving from staging to master
+[33m0629a46[m HEAD@{14}: checkout: moving from master to staging
+[33maf12c47[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m HEAD@{15}: checkout: moving from staging to master
+[33m0629a46[m HEAD@{16}: checkout: moving from master to staging
+[33maf12c47[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m HEAD@{17}: checkout: moving from staging to master
+[33m0629a46[m HEAD@{18}: checkout: moving from master to staging
+[33maf12c47[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m HEAD@{19}: checkout: moving from staging to master
+[33m0629a46[m HEAD@{20}: commit (merge): Atualizando as branch
+[33m680c758[m HEAD@{21}: checkout: moving from master to staging
+[33maf12c47[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m HEAD@{22}: checkout: moving from staging to master
+[33m680c758[m HEAD@{23}: checkout: moving from master to staging
+[33maf12c47[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m HEAD@{24}: checkout: moving from staging to master
+[33m680c758[m HEAD@{25}: checkout: moving from master to staging
+[33maf12c47[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m HEAD@{26}: commit: Programação Python - Alteração de itens
+[33m13371f4[m HEAD@{27}: commit: Programação Python - Dicionarios Python
+[33m1efa860[m HEAD@{28}: commit: Programação Python - Adicionando Descompactado uma Tupla
+[33mc3955aa[m HEAD@{29}: commit: Prgramação Python - Tuplas Python
+[33m9728089[m HEAD@{30}: commit: Programação Python - Classificar listas
+[33m0c97163[m HEAD@{31}: commit: Programação Python - Operadores Python
+[33mc276692[m HEAD@{32}: commit: Programação Python
+[33mcab7b15[m HEAD@{33}: commit: Pausa na apostila para começar a prog. em Python
+[33m1a27d80[m HEAD@{34}: commit: Alteracao na Apostila
+[33m5f24ea4[m HEAD@{35}: commit: Acrescimo de mais uma Query
+[33m1a24125[m HEAD@{36}: commit: Função Auditar
+[33m1ae7394[m HEAD@{37}: commit: Corrigindo algumas linhas
+[33m6dc9e10[m HEAD@{38}: commit: Alteracao de Atualização nas Query
+[33m63bf17f[m HEAD@{39}: commit: Gatilho para Inserir Dados
+[33m7ddf4c6[m HEAD@{40}: commit: Gatilho ou Disparadores
+[33m739f835[m HEAD@{41}: commit: Procedimentos Armazenados
+[33m2018a88[m HEAD@{42}: commit: Sub-Rotinas e Procedure
+[33ma87c936[m HEAD@{43}: commit: Visualizacao de dados
+[33mc22abbd[m HEAD@{44}: commit: Modificando dados
+[33m7044a7c[m HEAD@{45}: commit: juncao de tabelas
+[33ma990bc9[m HEAD@{46}: commit: junção de tabelas
+[33m597cfe1[m HEAD@{47}: commit: Começo da Junção de Dados
+[33m859efb0[m HEAD@{48}: checkout: moving from staging to master
+[33m680c758[m HEAD@{49}: checkout: moving from master to staging
+[33m859efb0[m HEAD@{50}: commit: Reiniciando os trabalhos
+[33me0104a7[m HEAD@{51}: checkout: moving from staging to master
+[33m680c758[m HEAD@{52}: commit: Procedimentos Armazenados
+[33m3f1de3c[m HEAD@{53}: checkout: moving from master to staging
+[33me0104a7[m HEAD@{54}: commit: Procedimentos Armazenados
+[33md266f22[m HEAD@{55}: commit: Procedimentos Armazenados
+[33m7d0637e[m HEAD@{56}: checkout: moving from staging to master
+[33m3f1de3c[m HEAD@{57}: commit: Procedimentos Armazenados
+[33mabac25f[m HEAD@{58}: commit: Consulta, disciplina ofertada
+[33m8e31ffd[m HEAD@{59}: checkout: moving from master to staging
+[33m7d0637e[m HEAD@{60}: commit: Consulta, disciplina ofertada
+[33m745f31f[m HEAD@{61}: commit: Consulta as disciplina ofertadas
+[33m5fa90c8[m HEAD@{62}: commit: Chave, relacionamento e cardinalidade
+[33ma499251[m HEAD@{63}: checkout: moving from staging to master
+[33m8e31ffd[m HEAD@{64}: commit: Chave, relacionamento e cardinalidade
+[33m5e234f4[m HEAD@{65}: commit: $ git commit -m
+[33m564e54d[m HEAD@{66}: checkout: moving from master to staging
+[33ma499251[m HEAD@{67}: commit: Chave, relacionamento e cardialidade
+[33m6f2487c[m HEAD@{68}: commit: Exemplo de Indexação de Tabelas
+[33m42ddb5f[m HEAD@{69}: checkout: moving from staging to master
+[33m564e54d[m HEAD@{70}: commit: Exemplo de Indexação de Tabelas
+[33mb6557da[m HEAD@{71}: commit: acrescentando visão de tabelas
+[33mb0e00c4[m HEAD@{72}: checkout: moving from master to staging
+[33m42ddb5f[m HEAD@{73}: commit: acrescentando visão de tabelas
+[33m9bd201f[m HEAD@{74}: commit: Mais consultas nas tabelas
+[33mac7c94e[m HEAD@{75}: checkout: moving from staging to master
+[33mb0e00c4[m HEAD@{76}: checkout: moving from master to staging
+[33mac7c94e[m HEAD@{77}: checkout: moving from staging to master
+[33mb0e00c4[m HEAD@{78}: commit: Mais consultas nas tabelas
+[33mb5f9c66[m HEAD@{79}: commit: Exemplo de junção de tabelas
+[33me2fc12b[m HEAD@{80}: checkout: moving from master to staging
+[33mac7c94e[m HEAD@{81}: commit: Acrescentando junção das tabelas
+[33mb8a770c[m HEAD@{82}: checkout: moving from staging to master
+[33me2fc12b[m HEAD@{83}: checkout: moving from master to staging
+[33mb8a770c[m HEAD@{84}: checkout: moving from staging to master
+[33me2fc12b[m HEAD@{85}: checkout: moving from master to staging
+[33mb8a770c[m HEAD@{86}: commit (merge): Atualizando os arquivos
+[33m95ab7f4[m HEAD@{87}: commit: Atualizando o arquivo
+[33maa3c782[m HEAD@{88}: checkout: moving from staging to master
+[33me2fc12b[m HEAD@{89}: commit: Atualizado o testo
+[33md423cb4[m HEAD@{90}: checkout: moving from master to staging
+[33maa3c782[m HEAD@{91}: checkout: moving from staging to master
+[33md423cb4[m HEAD@{92}: commit: Instalação SQL Serve
+[33m21c16a1[m HEAD@{93}: checkout: moving from master to staging
+[33maa3c782[m HEAD@{94}: checkout: moving from staging to master
+[33m21c16a1[m HEAD@{95}: checkout: moving from master to staging
+[33maa3c782[m HEAD@{96}: checkout: moving from staging to master
+[33m21c16a1[m HEAD@{97}: checkout: moving from master to staging
+[33maa3c782[m HEAD@{98}: checkout: moving from staging to master
+[33m21c16a1[m HEAD@{99}: commit: Reorganizando a apostila
+[33m28c6c4d[m HEAD@{100}: commit: Reorganizando arquivos
+[33mf73629e[m HEAD@{101}: checkout: moving from master to staging
+[33maa3c782[m HEAD@{102}: commit: adicionando meu codigo
+[33mad6f411[m HEAD@{103}: commit: Modificado a pasta
+[33m606ea09[m HEAD@{104}: checkout: moving from staging to master
+[33mf73629e[m HEAD@{105}: checkout: moving from master to staging
+[33m606ea09[m HEAD@{106}: commit: Foi adicionado meu codigo.rtf
+[33mbd07297[m HEAD@{107}: commit: organizando arquivos
+[33m0da7a86[m HEAD@{108}: checkout: moving from staging to master
+[33mf73629e[m HEAD@{109}: commit: organizando os comandos
+[33mc1102ce[m HEAD@{110}: checkout: moving from master to staging
+[33m0da7a86[m HEAD@{111}: checkout: moving from staging to master
+[33mc1102ce[m HEAD@{112}: checkout: moving from master to staging
+[33m0da7a86[m HEAD@{113}: commit: guardar arquivo app.txt
+[33m9539e73[m HEAD@{114}: checkout: moving from staging to master
+[33mc1102ce[m HEAD@{115}: commit: SQL server Instalação
+[33m59b5758[m HEAD@{116}: commit: Mais detalhes como teste
+[33m3d3be02[m HEAD@{117}: commit: INCLUSAO JUNCAO DE TABELAS
+[33m7662708[m HEAD@{118}: checkout: moving from master to staging
+[33m9539e73[m HEAD@{119}: commit: caixa para adicionar arquivos ocultos
+[33mcadba4a[m HEAD@{120}: checkout: moving from staging to master
+[33m7662708[m HEAD@{121}: commit: acrescentando mais uma linha de comando
+[33m4eb2502[m HEAD@{122}: checkout: moving from master to staging
+[33mcadba4a[m HEAD@{123}: checkout: moving from staging to master
+[33m4eb2502[m HEAD@{124}: checkout: moving from stangig to staging
+[33mcadba4a[m HEAD@{125}: checkout: moving from master to stangig
+[33mcadba4a[m HEAD@{126}: checkout: moving from staging to master
+[33m4eb2502[m HEAD@{127}: commit: Apostila para trabalho
+[33mcadba4a[m HEAD@{128}: checkout: moving from master to staging
+[33mcadba4a[m HEAD@{129}: commit: minhas apostilas sql
+[33ma2793fd[m HEAD@{130}: commit: codigos sql
+[33m28e9f09[m HEAD@{131}: commit: permitir cadastrar usuario
+[33m917f0ba[m HEAD@{132}: commit (initial): commit inicial
