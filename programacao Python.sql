@@ -3649,4 +3649,4 @@ print(mytripler(11))
 
 Use funções lambda quando uma função anônima for necessária por um curto período de tempo.
 
-teste
+
