@@ -3649,4 +3649,357 @@ print(mytripler(11))
 
 Use funções lambda quando uma função anônima for necessária por um curto período de tempo.
 
+Matrizes Python
+
+Nota: O Python não possui suporte integrado para Arrays, mas as Listas do Python podem ser usadas.
+
+Matrizes
+Nota: Esta página mostra como usar LISTS como ARRAYS, porém, para trabalhar com arrays em Python 
+você terá que importar uma biblioteca, como a biblioteca NumPy .
+
+Arrays são usados para armazenar vários valores em uma única variável:
+
+Exemplo
+Crie um array contendo nomes de carros:
+
+cars = ["Ford", "Volvo", "BMW"]
+O que é uma Matriz?
+Um array é uma variável especial, que pode conter mais de um valor por vez.
+
+Se você tiver uma lista de itens (uma lista de nomes de carros, por exemplo), armazenar os carros 
+em variáveis únicas pode ficar assim:
+
+car1 = "Ford"
+car2 = "Volvo"
+car3 = "BMW"
+No entanto, e se você quiser percorrer os carros e encontrar um específico? E se você não tivesse 
+3 carros, mas 300?
+
+A solução é uma matriz!
+
+Uma matriz pode conter muitos valores em um único nome e você pode acessar os valores referindo-se 
+a um número de índice.
+
+Acesse os elementos de um array
+Você se refere a um elemento de array referindo-se ao número do índice .
+
+Exemplo
+Obtenha o valor do primeiro item da matriz:
+
+x = cars[0]
+Exemplo
+Modifique o valor do primeiro item da matriz:
+
+cars[0] = "Toyota"
+O comprimento de uma matriz
+Use o len()método para retornar o comprimento de uma matriz (o número de elementos em uma matriz).
+
+Exemplo
+Retorna o número de elementos no cars array:
+
+x = len(cars)
+Nota: O comprimento de uma matriz é sempre um a mais do que o índice de matriz mais alto.
+
+Elementos de Matriz em Loop
+Você pode usar o for inloop para percorrer todos os elementos de uma matriz.
+
+Exemplo
+Imprima cada item na carsmatriz:
+
+for x in cars:
+  print(x)
+Adicionando elementos de matriz
+Você pode usar o append()método para adicionar um elemento a uma matriz.
+
+Exemplo
+Adicione mais um elemento ao carsarray:
+
+cars.append("Honda")
+Removendo elementos da matriz
+Você pode usar o pop()método para remover um elemento da matriz.
+
+Exemplo
+Exclua o segundo elemento da carsmatriz:
+
+cars.pop(1)
+Você também pode usar o remove()método para remover um elemento da matriz.
+
+Exemplo
+Exclua o elemento que tem o valor "Volvo":
+
+cars.remove("Volvo")
+Nota: O remove()método da lista remove apenas a primeira ocorrência do valor especificado.
+
+Métodos de matriz
+Python tem um conjunto de métodos embutidos que você pode usar em listas/matrizes.
+
+Method    Description
+append()  Adds an element at the end of the list
+clear()   Removes all the elements from the list
+copy()    Returns a copy of the list
+count()   Returns the number of elements with the specified value
+extend()  Add the elements of a list (or any iterable), to the end of the current list
+index()   Returns the index of the first element with the specified value
+insert()  Adds an element at the specified position
+pop()     Removes the element at the specified position
+remove()  Removes the first item with the specified value
+reverse() Reverses the order of the list
+sort()    Sorts the list
+
+Nota: O Python não possui suporte integrado para Arrays, mas as Listas do Python podem ser usadas.
+
+Classes e objetos Python
+
+Classes/objetos Python
+
+Python é uma linguagem de programação orientada a objetos.
+
+Quase tudo em Python é um objeto, com suas propriedades e métodos.
+
+Uma classe é como um construtor de objetos, ou um "plano" para criar objetos.
+
+Criar uma classe
+Para criar uma classe, use a palavra-chave class:
+
+Exemplo
+Crie uma classe chamada MyClass, com uma propriedade chamada x:
+
+class MyClass:
+  x = 5
+
+Criar objeto
+Agora podemos usar a classe chamada MyClass para criar objetos:
+
+Exemplo
+Crie um objeto chamado p1 e imprima o valor de x:
+
+p1 = MyClass()
+print(p1.x)
+
+A função __init__()
+Os exemplos acima são classes e objetos em sua forma mais simples e não são realmente úteis em 
+aplicações da vida real.
+
+Para entender o significado das classes, temos que entender a função __init__() embutida.
+
+Todas as classes possuem uma função chamada __init__(), que sempre é executada quando a classe 
+está sendo iniciada.
+
+Use a função __init__() para atribuir valores às propriedades do objeto ou outras operações que 
+são necessárias quando o objeto está sendo criado:
+
+Exemplo
+Crie uma classe chamada Person, use a função __init__() para atribuir valores para nome e idade:
+
+class Person:
+  def __init__(self, name, age):
+    self.name = name
+    self.age = age
+
+p1 = Person("John", 36)
+
+print(p1.name)
+print(p1.age)
+Nota: A __init__()função é chamada automaticamente toda vez que a classe está sendo usada 
+para criar um novo objeto.
+
+Métodos de objeto
+
+Objetos também podem conter métodos. Métodos em objetos são funções que pertencem ao objeto.
+
+Vamos criar um método na classe Person:
+
+Exemplo
+Insira uma função que imprima uma saudação e execute-a no objeto p1:
+
+class Person:
+  def __init__(self, name, age):
+    self.name = name
+    self.age = age
+
+  def myfunc(self):
+    print("Hello my name is " + self.name)
+
+p1 = Person("John", 36)
+p1.myfunc()
+
+Nota: O self parâmetro é uma referência à instância atual da classe e é usado para acessar 
+variáveis que pertencem à classe.
+
+O parâmetro self
+O self parâmetro é uma referência à instância atual da classe e é usado para acessar as variáveis
+ que pertencem à classe.
+
+Ele não precisa ser nomeado self, você pode chamá-lo como quiser, mas deve ser o primeiro parâmetro 
+de qualquer função da classe:
+
+Exemplo
+Use as palavras mysillyobject e abc em vez de self :
+
+class Person:
+  def __init__(mysillyobject, name, age):
+    mysillyobject.name = name
+    mysillyobject.age = age
+
+  def myfunc(abc):
+    print("Hello my name is " + abc.name)
+
+p1 = Person("John", 36)
+p1.myfunc()
+
+Modificar propriedades do objeto
+Você pode modificar propriedades em objetos como este:
+
+Exemplo
+Defina a idade de p1 para 40:
+
+p1.age = 40
+
+Excluir propriedades do objeto
+Você pode excluir propriedades em objetos usando a delpalavra-chave:
+
+Exemplo
+Exclua a propriedade age do objeto p1:
+
+del p1.age
+
+Excluir objetos
+Você pode excluir objetos usando a delpalavra-chave:
+
+Exemplo
+Exclua o objeto p1:
+
+del p1
+A declaração de passagem
+classAs definições não podem estar vazias, mas se por algum motivo você tiver 
+uma classdefinição sem conteúdo, coloque a passdeclaração para evitar erros.
+
+Exemplo
+class Person:
+  pass
+
+Herança Python
+
+A herança nos permite definir uma classe que herda todos os métodos e propriedades de outra classe.
+
+A classe pai é a classe que está sendo herdada, também chamada de classe base.
+
+A classe filha é a classe que herda de outra classe, também chamada de classe derivada.
+
+Criar uma classe pai
+
+Qualquer classe pode ser uma classe pai, então a sintaxe é a mesma da criação de qualquer outra classe:
+
+Exemplo
+
+Crie uma classe chamada Person, with firstnameand lastnameproperties e um printnamemétodo:
+
+class Person:
+  def __init__(self, fname, lname):
+    self.firstname = fname
+    self.lastname = lname
+
+  def printname(self):
+    print(self.firstname, self.lastname)
+
+#Use the Person class to create an object, and then execute the printname method:
+
+x = Person("John", "Doe")
+x.printname()
+
+Criar uma classe filha
+Para criar uma classe que herde a funcionalidade de outra classe, envie a classe pai como 
+parâmetro ao criar a classe filha:
+
+Exemplo
+Crie uma classe chamada Student, que herdará as propriedades e métodos da Personclasse:
+
+class Student(Person):
+  pass
+
+Observação: use a palavra- pass chave quando não desejar adicionar outras propriedades ou métodos à classe.
+
+Agora a classe Student tem as mesmas propriedades e métodos que a classe Person.
+
+Exemplo
+Use a Studentclasse para criar um objeto e execute o printnamemétodo:
+
+x = Student("Mike", "Olsen")
+x.printname()
+
+Adicione a função __init__()
+Até agora criamos uma classe filha que herda as propriedades e métodos de seu pai.
+
+Queremos adicionar a __init__()função à classe filha (em vez da palavra- passchave).
+
+Nota: A __init__()função é chamada automaticamente toda vez que a classe está sendo usada 
+para criar um novo objeto.
+
+Exemplo
+Adicione a __init__()função à Studentclasse:
+
+class Student(Person):
+  def __init__(self, fname, lname):
+    #add properties etc.
+
+Quando você adiciona a __init__()função, a classe filha não herdará mais a __init__()função do pai.
+
+Nota: A __init__() função do filho substitui a herança da __init__()função do pai.
+
+Para manter a herança da __init__() função do pai, adicione uma chamada à __init__()função do pai:
+
+Exemplo
+class Student(Person):
+  def __init__(self, fname, lname):
+    Person.__init__(self, fname, lname)
+
+Agora adicionamos com sucesso a função __init__() e mantivemos a herança da classe pai, e estamos 
+prontos para adicionar funcionalidade na __init__()função.
+
+Use a função super()
+Python também tem uma super()função que fará com que a classe filha herde todos os métodos e propriedades
+ de seu pai:
+
+Exemplo
+class Student(Person):
+  def __init__(self, fname, lname):
+    super().__init__(fname, lname)
+
+Ao usar a super()função, você não precisa usar o nome do elemento pai, ele herdará automaticamente os 
+métodos e propriedades de seu pai.
+
+Adicionar propriedades
+Exemplo
+Adicione uma propriedade chamada graduationyearà Studentclasse:
+
+class Student(Person):
+  def __init__(self, fname, lname):
+    super().__init__(fname, lname)
+    self.graduationyear = 2019
+No exemplo abaixo, o ano 2019deve ser uma variável e passado para a Studentclasse ao criar objetos de aluno.
+ Para isso, adicione outro parâmetro na função __init__():
+
+Exemplo
+Adicione um yearparâmetro e passe o ano correto ao criar objetos:
+
+class Student(Person):
+  def __init__(self, fname, lname, year):
+    super().__init__(fname, lname)
+    self.graduationyear = year
+
+x = Student("Mike", "Olsen", 2019)
+Adicionar métodos
+Exemplo
+Adicione um método chamado welcomeà Studentclasse:
+
+class Student(Person):
+  def __init__(self, fname, lname, year):
+    super().__init__(fname, lname)
+    self.graduationyear = year
+
+  def welcome(self):
+    print("Welcome", self.firstname, self.lastname, "to the class of", self.graduationyear)
+
+
+
 
