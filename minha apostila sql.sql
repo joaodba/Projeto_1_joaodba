@@ -1784,3 +1784,5 @@ SELECT * FROM auditoria;
 
 pausa da apostila de SQL
 
+Teste de aprendizado no sql.
+
