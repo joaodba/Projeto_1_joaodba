@@ -4000,6 +4000,6 @@ class Student(Person):
   def welcome(self):
     print("Welcome", self.firstname, self.lastname, "to the class of", self.graduationyear)
 
-
+obs: Pausa para estudar powerBI
 
 
