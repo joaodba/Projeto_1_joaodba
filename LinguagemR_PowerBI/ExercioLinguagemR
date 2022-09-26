@@ -1,0 +1,61 @@
+# Estatistica Básica
+# Parte 1 - Medidas de Posição
+
+# Comando Buscar arquivo na Pasta
+setwd("C:/powerBI/Cap16_LingR")
+# Comando confirmando o caminho
+getwd()
+# Carregando o Data Set
+VENDAS <-read.csv("Vendas.csv",fileEncoding = "windows-1252")
+# Comando checar a strutura do arquivo
+str(VENDAS)
+# Comando Visualizar o Arquivo
+View(VENDAS)
+# Comando mostrar o resumo do item da coluna Valor
+summary(VENDAS$Valor)
+# Comando mostrar o resumo do item da coluna custo
+summary(VENDAS$Custo)
+# Media
+mean(VENDAS$Valor)
+mean(VENDAS$Custo)
+# Média Ponderada
+weighted.mean(VENDAS$Valor, w VENDAS.custo)
+# Mediana
+median(VENDAS$Valor)
+median(VENDAS$Custo)
+
+# Moda
+# Criando uma função
+moda < - function(v) {
+  valor_unico <- unique(v)
+  valor_unico[which.max(tabulate(match(v, valor_unico)))]
+}
+
+# Obtendo a Moda
+
+resultado <- moda (vendas$valor)
+print(resultado)
+
+# Obtendo a Moda
+resultado_custo <- moda (VENDAS$Custo)
+print(resultado_custo)
+
+# Criando grafico de Media de Valor por estado no ggplot2
+# Comando para instalar o pacote 
+install.packages("ggplot2")
+# comando para carregar os pacotes e iniciar a criação dos graficos
+library(ggplot2)
+
+# Cria o grafico
+ggplot(VENDAS) +
+  stat_summary(aes(x = Estado,
+                   y = Valor),
+                 fun = mean,
+                 geom = "bar",
+               fill = "lightgreen",
+               col = "grey50",)+
+  labs(title = "Media de Valor por Estado")
+
+
+
+
